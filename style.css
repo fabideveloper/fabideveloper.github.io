@@ -1,6 +1,7 @@
 body {
   background-color: #000000;
   background-image: url("data:image/svg+xml,%3Csvg width='64' height='64' viewBox='0 0 64 64' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8 16c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zm33.414-6l5.95-5.95L45.95.636 40 6.586 34.05.636 32.636 2.05 38.586 8l-5.95 5.95 1.414 1.414L40 9.414l5.95 5.95 1.414-1.414L41.414 8zM40 48c4.418 0 8-3.582 8-8s-3.582-8-8-8-8 3.582-8 8 3.582 8 8 8zm0-2c3.314 0 6-2.686 6-6s-2.686-6-6-6-6 2.686-6 6 2.686 6 6 6zM9.414 40l5.95-5.95-1.414-1.414L8 38.586l-5.95-5.95L.636 34.05 6.586 40l-5.95 5.95 1.414 1.414L8 41.414l5.95 5.95 1.414-1.414L9.414 40z' fill='%23070014' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E");
+     margin-bottom: 150px;
 }
 
 .header {
@@ -57,9 +58,45 @@ body {
   box-shadow: 0 0 20px rgba(105, 0, 209, 0.8), 0 0 30px rgba(252, 240, 0, 0.6),
     0 0 40px rgba(105, 0, 209, 0.5);
 }
+
+.text-gradient {
+  background: linear-gradient(
+    45deg,
+    rgba(105, 0, 209, 1),
+    rgba(252, 240, 0, 1)
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 30px;
+  margin: 0;
+  text-shadow: 0 0 5px rgba(255, 255, 255, 0.15),
+    0 0 10px rgba(255, 255, 255, 0.1), 0 0 15px rgba(255, 255, 255, 0.2);
+}
+.code-format {
+   background-color: rgba(0, 0, 0, 0);
+  color: rgba(230, 215, 245, 1);
+  padding: 10px;
+  font-family: "Ethnocentric", cursive;
+  font-size: 50px;
+  text-align: center;
+  border-radius: 15px;
+}
+
 .projects {
+   background-color: rgba(0, 0, 0, 0);
+  color: rgba(230, 215, 245, 1);
+  padding: 100px;
+  font-family: "Ethnocentric", cursive;
   font-size: 20px;
   text-align: center;
   border-radius: 15px;
-  padding: 50px;
+}
+.about {
+   background-color: rgba(0, 0, 0, 0);
+  color: rgba(230, 215, 245, 1);
+  padding: 60px;
+  font-family: "Ethnocentric", cursive;
+  font-size: 20px;
+  text-align: center;
+  border-radius: 15px;
 }
