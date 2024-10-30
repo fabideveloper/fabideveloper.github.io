@@ -8,7 +8,7 @@ body {
 .header, .contact, .about, .projects, .code-format {
   background-color: rgba(0, 0, 0, 0);
   color: rgba(230, 215, 245, 1);
-  font-family: "Ethnocentric", cursive, Arial, sans-sherif;
+  font-family: "DynaPuff", cursive, Arial, sans-sherif;
   text-align: center;
   border-radius: 15px;
 }
