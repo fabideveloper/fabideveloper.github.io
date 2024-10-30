@@ -1,14 +1,58 @@
-$brandColor: darkorchid;
-
 body {
-  font-family: system-ui, sans-serif;
-  background: linear-gradient(to bottom,
-    $brandColor,
-    darken($brandColor, 15%)
-  );
-  color: white;
-  height: 100vh;
-  margin: 0;
-  display: grid;
-  place-items: center;
+    background: linear-gradient(135deg, rgba(0, 0, 20, 1), rgba(0, 0, 10, 1));
+}
+
+.header { 
+  background-color: rgba(0,0,0,0);
+  color: rgba(230, 215, 245,1);
+  padding: 10px; 
+  font-family: 'Ethnocentric', cursive; 
+  font-size: 20px; 
+  text-align: center; 
+  border-radius: 15px;
+
+  
+}
+
+.header-text-gradient {
+    background: linear-gradient(45deg, rgba(105, 0, 209, 1), 
+      rgba(252, 240, 0, 1)); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    font-size: 48px; 
+    margin: 0;
+    text-shadow: 
+        0 0 5px rgba(255,255,255, 0.15), 
+        0 0 10px rgba(255,255,255, 0.1), 
+       0 0 15px rgba(255,255,255, 0.2); 
+}
+
+.contact { 
+  background-color: rgba(0,0,0,0);
+  color: rgba(230, 215, 245,1);
+  padding: 10px; 
+  font-family: 'Ethnocentric', cursive; 
+  font-size: 20px; 
+  text-align: center; 
+  border-radius: 15px;
+  margin: 150px;
+  box-shadow: 
+        0 0 10px rgba(105, 0, 209, .7),
+        0 0 20px rgba(161, 91, 130, 1), 
+        0 0 30px rgba(207, 167, 64, 1), 
+        0 0 40px rgba(252, 240, 0, .8); 
+}
+.discord-button {
+    display: inline-block; 
+    padding: 10px 20px;
+    background: linear-gradient(45deg, rgba(105, 0, 209, 1), 
+      rgba(252, 240, 0, 1)); 
+    color: white; 
+    border-radius: 15px; 
+    text-decoration: none; 
+    transition: background-color 0.3s, transform 0.3s; 
+}
+
+.discord-button:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
 }
