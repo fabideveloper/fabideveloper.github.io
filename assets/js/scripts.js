@@ -1,5 +1,3 @@
-// This file contains JavaScript code for interactivity on the website, such as handling events and dynamic content updates.
-
 document.addEventListener('DOMContentLoaded', function() {
     // Example: Smooth scrolling for anchor links
     const links = document.querySelectorAll('a[href^="#"]');
