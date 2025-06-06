@@ -41,7 +41,6 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Add any JavaScript animations or interactions here
     console.log('Document loaded');
 
     fetch('assets/projects.json')
