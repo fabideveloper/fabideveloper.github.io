@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fabi</title>
+    
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/@catppuccin/prism@latest/dist/mocha.css" rel="stylesheet" />
+</head>
+<body>
+
+    <div class="bg-container">
+        <div class="bg-layer" id="bg2"></div> 
+        <div class="bg-layer" id="bg1"></div> 
+    </div>
+
+    <nav class="glass-nav">
+        <div class="nav-links">
+            <a href="#about-section">About</a>
+            <a href="#games">Games</a>
+            <a href="#code">Code</a>
+        </div>
+        <a href="#contact" class="btn-nav">Hire Me</a>
+    </nav>
+
+    <div class="main-wrapper">
+        
+        <div class="intro-text reveal">
+            <h2>The only limit is your imagination.</h2>
+            
+            <div class="live-aggregate-stats">
+                <div class="agg-stat">
+                    <span class="agg-number" id="total-ccu">???</span>
+                    <span class="agg-label">Active Players</span>
+                </div>
+                <div class="agg-divider"></div>
+                <div class="agg-stat">
+                    <span class="agg-number" id="total-visits">???</span>
+                    <span class="agg-label">Total Featured Visits</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="about-section">
+            <div class="stats-grid reveal" id="stats">
+                <div class="stat-card">
+                    <span class="stat-number" data-target="250+">???</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="500+">???</span>
+                    <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="8+">???</span>
+                    <span class="stat-label">Years of Experience</span>
+                </div>
+            </div>
+
+            <div id="job-container" class="job-section reveal"></div>
+
+            <section class="simple-about reveal">
+                <h3>Hey, I'm Fabi 👋</h3>
+                <p>
+                    I just like making cool stuff on Roblox. <br><br>
+                    I mainly do backend scripting (data saving, game logic, anti-cheat), but I can handle pretty much anything you throw at me. 
+                    <br>
+                   <b> Ever wanted to see a flying pig with a machine gun, while also speaking fluent French? I can do that. </b><br><br>
+                    
+                </p>
+            </section>
+        </div>
+
+        <h3 class="section-label reveal" id="games">Featured Games</h3>
+        <p class="section-subtitle reveal">
+            Turning creative concepts into immersive worlds players love to explore.
+        </p>
+        <div class="grid-container reveal" id="games-grid"></div>
+
+        <h3 class="section-label reveal" id="code">Technical Showcase</h3>
+        <p class="section-subtitle reveal">
+            I don't just write code - I engineer organized, optimized systems with passion.
+        </p>
+        <div class="grid-container reveal" id="code-grid"></div>
+
+        <footer class="footer reveal" id="contact">
+            <div class="sparkles-container">
+                <span class="sparkle"></span><span class="sparkle"></span>
+                <span class="sparkle"></span><span class="sparkle"></span>
+                <span class="sparkle"></span><span class="sparkle"></span>
+                <span class="sparkle"></span>
+            </div>
+            <div class="footer-content">
+                <h2>I can make anything, literally.</h2>
+                <p>Find me on : (Discord preferred)</p>
+                <div class="footer-actions">
+                    <a href="mailto:fabidevgames@gmail.com" class="btn-footer btn-email">✉️ Email Me</a>
+                    <a href="https://discord.com/users/479583570139021332" target="_blank" class="btn-footer btn-discord">
+                        <img src="assets/images/Discord-Logo.png" alt="Discord" class="icon-discord" onerror="this.src='https://cdn.simpleicons.org/discord/000000'">
+                        Discord
+                    </a>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-lua.min.js"></script>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

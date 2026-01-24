@@ -1,0 +1,174 @@
+{
+  "config": {
+    "showJobs": true
+  },
+  "currentJobs": [
+    {
+      "studioName": "IX Studios",
+      "position": "Fullstack Developer",
+      "icon": "assets/images/IX-Logo.png"
+    },
+    {
+      "studioName": "Starbite",
+      "position": "Lead Scripter",
+      "icon": "assets/images/Starbite-Logo.png"
+    }
+  ],
+ "games": [
+    {
+      "title": "🏁Guess the Country Flag or Die!",
+      "role": "Lead Scripter, Fullstack Developer",
+      "link": "https://www.roblox.com/games/88817068170433/Guess-the-Country-Flag-or-Die",
+      "description": "Fully coded this game from scrach",
+      
+      "id": "7706772290",  
+      "ccu": "Loading...",    
+      "visits": "Loading..."  
+    },
+    {
+      "title": "💥 Bomb to Mine!",
+      "role": "Lead Scripter, Fullstack Developer",
+      "link": "https://www.roblox.com/games/110695939084401/Bomb-to-Mine",
+      "description": "Fully coded this game from scrach",
+      
+      "id": "6788960399",  
+      "ccu": "Loading...",    
+      "visits": "Loading..."  
+    },
+    {
+      "title": "🥚My Anime Egg Farm",
+      "role": "Assistant Scripter",
+      "link": "https://www.roblox.com/games/97883985639349/My-Anime-Egg-Farm",
+      "description": "Bug Fixing and Scripting Assistance",
+      
+      "id": "9141263942",  
+      "ccu": "Loading...",    
+      "visits": "Loading..."  
+    },
+    {
+      "title": "My Anime Collection",
+      "role": "Scripter, Fullstack Developer",
+      "link": "https://www.roblox.com/games/97796831147627/My-Anime-Collection",
+      "description": "Bug Fixing, Systems Implementation and Main Development",
+      
+      "id": "9382669119",  
+      "ccu": "Loading...",    
+      "visits": "Loading..."  
+    },
+    { 
+
+      "title": "Scary Cups (Horror)",
+      "role": "Scripter, Fullstack Developer",
+      "link": "https://www.roblox.com/games/139549700315350/Scary-Cups",
+      "description": "Fully coded this game from scrach",
+      "id": "8426189297",  
+      "ccu": "Loading...",    
+      "visits": "Loading..."  
+    },
+     {
+      "title": "💬 Name a ... or Die",
+      "role": "Scripter, Fullstack Developer",
+      "link": "https://www.roblox.com/games/73878267950152/Name-a-or-Die",
+      "description": "Fully coded this game from scrach",
+      
+      "id": "8336941507",  
+      "ccu": "Loading...",    
+      "visits": "Loading..."  
+    }
+  ],
+  "code": [
+    {
+      "title": "UI Caching System",
+      "language": "Luau",
+      "description": "Efficiently manages GUI elements by caching them for quick access.",
+     "snippet": [
+"-- Returns a GuiObject from the UI_Elements table, if it doesn't exist, it will create it and add it to the table",
+"function UIController:GetElement(ElementName : string, ElementClass : string) : GuiObject",
+"\tif not self.UI_Elements[ElementClass] then",
+"\t\tself.UI_Elements[ElementClass] = { }",
+"\tend",
+"\tif not self.UI_Elements[ElementClass][ElementName] then",
+"\t\tself.UI_Elements[ElementClass][ElementName] = nil",
+"\t\tlocal NewElement = WaitForChildWithClass(Client.PlayerGui, ElementName, ElementClass)",
+"\t\tif NewElement then",
+"\t\t\tself.UI_Elements[ElementClass][ElementName] = NewElement",
+"\t\tend",
+"\tend",
+"\treturn self.UI_Elements[ElementClass][ElementName]",
+"end"
+]
+      
+    },
+    {
+      "title": "A simple upgrade system using the BigNum Package",
+      "language": "Luau",
+      "description": "Upgrades certain properties simply, and manages big numbers over the engine's limits using the BigNum Module.",
+      "snippet": [
+"function UpgradesService:RequestUpgrades(Player : Player, WhatExactly : string?, ...) : any",
+"\tlocal PlayerUpgrades = self.CachedServices.PlayersService:RequestData(Player, \"Upgrades\")",
+"",
+"\tif WhatExactly == \"UpgradeNextPrices\" then",
+"\t\tlocal args = ...",
+"\t\tlocal data = {}",
+"",
+"\t\tfor upgradeName, info in Upgrades_Data do",
+"\t\t\tlocal level = PlayerUpgrades[upgradeName] or 0",
+"\t\t\tlocal upgradeNameVal = BigNum.mt.tostring(BigNum.mt.mul(info.Base, (info.Multiplier ^ level) * info.Increment))",
+"\t\t\tdata[upgradeName] = upgradeNameVal",
+"\t\tend",
+"",
+"\t\treturn args ~= nil and data[args] or data, PlayerUpgrades, args ~= nil and Upgrades_Data[args] or Upgrades_Data",
+"\tend",
+"",
+"\treturn {}, PlayerUpgrades, Upgrades_Data",
+"end",
+"",
+"function UpgradesService.Client:RequestUpgrades(...)",
+"\treturn self.Server:RequestUpgrades(...)",
+"end"
+]
+    },
+ {
+      "title": "An OOP Class for a Cup Table game",
+      "language": "Luau",
+      "description": "Although this is just the constructor, this class manages a Cup Table game with teams, turns, and cup picking logic. (Could be simplified)",
+"snippet": [
+  "-- Creates and initializes a new CupTable instance",
+  "function CupTable.new(model : Model, max : number, playersInTeam : number)",
+  "\tlocal self = setmetatable({",
+  "\t\t-- config / state",
+  "\t\tChairs = {};",
+  "\t\tSeats = {};",
+  "\t\tMaxPlayers = max;",
+  "\t\tPlayersInTeam = playersInTeam or 1;",
+  "\t\tTeams = {}; -- teams[teamIndex] = { player1, player2, ... }",
+  "",
+  "\t\t-- runtime",
+  "\t\tCurrentPlayers = {};",
+  "\t\tPoisoned = {}; -- Poisoned[player] = { \"Cup1\", \"Cup2\" }",
+  "\t\tPicked = {}; -- Picked[player] = \"CupX\" or \"\"",
+  "\t\tWhoseTurn = 1;",
+  "",
+  "\t\tColliderBox = model:WaitForChild(\"Box\");",
+  "\t\tStatusText = model:WaitForChild(\"Primary\"):WaitForChild(\"BillboardGui\"):WaitForChild(\"TextLabel\");",
+  "\t\tCameraPositions = {};",
+  "\t\tCups = {};",
+  "\t\tCupsPositions = {};",
+  "\t\tGameToClient = GameService.Client.GameToClient;",
+  "",
+  "\t\t_DefaultCupPicks = model:GetAttribute(\"CupPicks\");",
+  "",
+  "\t\t_GameOn = false;",
+  "\t\t_Started = false;",
+  "\t\t_CanPickJumpscare = false;",
+  "\t\t_CanPick = {};",
+  "",
+  "\t\t__PlayerRevealConnections = {};",
+  "\t}, CupTable)",
+  "",
+  "\treturn self",
+  "end"
+]
+    }
+  ]
+}
