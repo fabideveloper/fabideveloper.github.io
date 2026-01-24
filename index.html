@@ -106,9 +106,15 @@
                 </div>
             </div>
         </footer>
-
+        <p class="copyright">
+            &copy; <span id="year"></span> FabiDev Games. All rights reserved.
+        </p>
     </div>
 
+    
+    <script>
+        document.getElementById('year').innerText = new Date().getFullYear();
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-lua.min.js"></script>
 
