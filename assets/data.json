@@ -9,7 +9,12 @@
       "icon": "assets/images/IX-Logo.png"
     },
     {
-      "studioName": "Starbite",
+      "studioName": "Simple Bricks",
+      "position": "Fullstack Developer",
+      "icon": "assets/images/SB-Logo.png"
+    },
+    {
+      "studioName": "StarBite",
       "position": "Lead Scripter",
       "icon": "assets/images/Starbite-Logo.png"
     }
@@ -171,4 +176,5 @@
 ]
     }
   ]
+
 }
