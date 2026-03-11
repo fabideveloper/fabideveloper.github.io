@@ -4,14 +4,19 @@
   },
   "currentJobs": [
     {
-      "studioName": "IX Studios",
-      "position": "Fullstack Developer",
-      "icon": "assets/images/IX-Logo.png"
+      "studioName": "DoBig",
+      "position": "Contract Programmer",
+      "icon": "assets/images/DoBig-Logo.png"
     },
     {
       "studioName": "Simple Bricks",
       "position": "Fullstack Developer",
       "icon": "assets/images/SB-Logo.png"
+    },
+    {
+      "studioName": "IX Studios",
+      "position": "Fullstack Developer",
+      "icon": "assets/images/IX-Logo.png"
     },
     {
       "studioName": "StarBite",
@@ -79,5 +84,6 @@
   ]
 
 }
+
 
 
