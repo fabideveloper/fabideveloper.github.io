@@ -1,1 +1,271 @@
-const _0x31b66c=_0x4b78;function _0x37e8(){const _0x4f8d76=['1355496tmTyxs','opacity','1049967dMLCAT','studioName','status','bg1','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22job-role\x22>','then','66oHmcNm','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>','catch','games','createElement','glass-card\x20game-card','querySelector','\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card-content\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22code-header\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h4>','.game-img','includes','assets/data.json','.stat-number','code-grid','\x22\x20target=\x22_blank\x22\x20class=\x22card-link\x22>Play\x20↗</a>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','?url=','querySelectorAll','Thumbnail\x20fetch\x20failed','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22stat-item\x22\x20title=\x22Total\x20Visits\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<svg\x20class=\x22stat-icon\x22\x20viewBox=\x220\x200\x2024\x2024\x22><path\x20d=\x22M8\x205v14l11-7z\x22/></svg>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22live-visits\x22>','job-card','innerText','length','warn','backgroundImage','getAttribute','classList','language','</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','src','getFullYear','className','url(\x27','</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<p>','json','snippet','name','Update\x20workerUrl\x20in\x20main.js','replace','top','role','addEventListener','game-card-','add','image','</code></pre>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20','&countPerUniverse=1&defaults=true&size=768x432&format=Png&isCircular=false','ceil','3324220rWKFUr','.game-title-overlay','job-container','link','active','highlightAll','onload','join','</h4>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22lang-tag\x22>','data','icon','values','scroll','innerHeight','ccu','visits','788357ZvBSjG','error','https://roblox.fabidevgames.workers.dev/','showJobs','toFixed','</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22code-preview\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<pre><code\x20class=\x22language-lua\x22>','div','43576EsTkji','462XqJQWh','https://games.roblox.com/v1/games?universeIds=','.live-ccu','579315UVGTmn','description','title','playing','.live-visits','forEach','filter','currentJobs','observe','isArray','data-target','getBoundingClientRect','</h4>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22game-stats\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22stat-item\x22\x20title=\x22Concurrent\x20Users\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<svg\x20class=\x22stat-icon\x22\x20viewBox=\x220\x200\x2024\x2024\x22><path\x20d=\x22M12\x2012c2.21\x200\x204-1.79\x204-4s-1.79-4-4-4-4\x201.79-4\x204\x201.79\x204\x204\x204zm0\x202c-2.67\x200-8\x201.34-8\x204v2h16v-2c0-2.66-5.33-4-8-4z\x22/></svg>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22live-ccu\x22>','innerHTML','\x22\x20alt=\x22Icon\x22\x20class=\x22job-icon\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22job-info\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22job-label\x22>Associated\x20With:</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22job-name\x22>','826806QCOhnM','style','https://thumbnails.roblox.com/v1/games/multiget/thumbnails?universeIds=','110bqeZqR','map','thumbnails','glass-card\x20code-card','appendChild','getElementById','display'];_0x37e8=function(){return _0x4f8d76;};return _0x37e8();}(function(_0x39b401,_0x38cac7){const _0x17c618=_0x4b78,_0x2b2c33=_0x39b401();while(!![]){try{const _0x3e327a=-parseInt(_0x17c618(0x1bf))/0x1+parseInt(_0x17c618(0x1e3))/0x2+-parseInt(_0x17c618(0x1d9))/0x3+parseInt(_0x17c618(0x219))/0x4+parseInt(_0x17c618(0x1ca))/0x5*(-parseInt(_0x17c618(0x1eb))/0x6)+parseInt(_0x17c618(0x1c7))/0x7*(parseInt(_0x17c618(0x1c6))/0x8)+-parseInt(_0x17c618(0x1e5))/0x9*(-parseInt(_0x17c618(0x1dc))/0xa);if(_0x3e327a===_0x38cac7)break;else _0x2b2c33['push'](_0x2b2c33['shift']());}catch(_0x16b22d){_0x2b2c33['push'](_0x2b2c33['shift']());}}}(_0x37e8,0xc685a));const revealElements=document[_0x31b66c(0x1fa)]('.reveal'),revealOnScroll=()=>{const _0x547758=_0x31b66c,_0x14073f=window[_0x547758(0x1bc)],_0x33fe36=0x32;revealElements['forEach'](_0x6850c1=>{const _0x147df6=_0x547758,_0x2778d2=_0x6850c1[_0x147df6(0x1d5)]()[_0x147df6(0x210)];_0x2778d2<_0x14073f-_0x33fe36&&_0x6850c1[_0x147df6(0x203)][_0x147df6(0x214)](_0x147df6(0x21d));});};window[_0x31b66c(0x212)](_0x31b66c(0x1bb),revealOnScroll),revealOnScroll(),window[_0x31b66c(0x212)](_0x31b66c(0x1bb),()=>{const _0x1a2ddb=_0x31b66c,_0x37861f=document[_0x1a2ddb(0x1e1)](_0x1a2ddb(0x1e8));if(_0x37861f){const _0xe0a7d1=window['scrollY'],_0x502c55=window[_0x1a2ddb(0x1bc)];let _0x2ab928=0x1-_0xe0a7d1/_0x502c55;if(_0x2ab928<0x0)_0x2ab928=0x0;_0x37861f[_0x1a2ddb(0x1da)][_0x1a2ddb(0x1e4)]=_0x2ab928;}});const statsSection=document['getElementById']('stats'),counters=document[_0x31b66c(0x1fa)](_0x31b66c(0x1f6));let started=![];const startCounting=()=>{const _0x3f3fce=_0x31b66c;counters[_0x3f3fce(0x1cf)](_0x4793c7=>{const _0x6f56a1=_0x3f3fce,_0xe4e895=_0x4793c7[_0x6f56a1(0x202)](_0x6f56a1(0x1d4)),_0x1cd70c=parseFloat(_0xe4e895),_0x47f022=_0xe4e895[_0x6f56a1(0x20f)](/[0-9.]/g,''),_0x48e5f0=0x64,_0x402b08=()=>{const _0x306875=_0x6f56a1,_0x5770af=_0x4793c7[_0x306875(0x1fe)][_0x306875(0x20f)](_0x47f022,''),_0x267120=+_0x5770af||0x0,_0x56aff4=_0x1cd70c/_0x48e5f0;_0x267120<_0x1cd70c?(_0x4793c7['innerText']=Math[_0x306875(0x218)](_0x267120+_0x56aff4),setTimeout(_0x402b08,0x14)):_0x4793c7[_0x306875(0x1fe)]=_0xe4e895;};_0x402b08();});};if(statsSection){const observer=new IntersectionObserver(_0x5ec37=>{_0x5ec37[0x0]['isIntersecting']&&!started&&(startCounting(),started=!![]);});observer[_0x31b66c(0x1d2)](statsSection);}function formatNumber(_0x32c6bc){const _0x2dc0d9=_0x31b66c;if(_0x32c6bc>=0x3b9aca00)return(_0x32c6bc/0x3b9aca00)['toFixed'](0x1)[_0x2dc0d9(0x20f)](/\.0$/,'')+'B';if(_0x32c6bc>=0xf4240)return(_0x32c6bc/0xf4240)[_0x2dc0d9(0x1c3)](0x1)[_0x2dc0d9(0x20f)](/\.0$/,'')+'M';if(_0x32c6bc>=0x3e8)return(_0x32c6bc/0x3e8)[_0x2dc0d9(0x1c3)](0x1)[_0x2dc0d9(0x20f)](/\.0$/,'')+'K';return _0x32c6bc;}async function fetchBatchStats(_0x2cb98f){const _0x35a6da=_0x31b66c,_0x16e881=_0x35a6da(0x1c1);if(_0x16e881===_0x35a6da(0x1c1)){console[_0x35a6da(0x200)](_0x35a6da(0x20e));return;}const _0xe33745=_0x2cb98f[_0x35a6da(0x1d0)](_0x362ab2=>_0x362ab2['id']);if(_0xe33745[_0x35a6da(0x1ff)]===0x0)return;const _0x472dca=_0xe33745[_0x35a6da(0x1dd)](_0x357de2=>_0x357de2['id']);let _0x5b5623=0x0,_0x330305=0x0;_0x2cb98f[_0x35a6da(0x1cf)](_0xa2f53a=>{const _0x241769=_0x35a6da;let _0x5f1aeb=parseFloat(_0xa2f53a['ccu'])||0x0,_0x4c2f08=parseFloat(_0xa2f53a[_0x241769(0x1be)])||0x0;if(_0xa2f53a['ccu']&&_0xa2f53a[_0x241769(0x1bd)][_0x241769(0x1f4)]('K'))_0x5f1aeb*=0x3e8;if(_0xa2f53a[_0x241769(0x1bd)]&&_0xa2f53a['ccu'][_0x241769(0x1f4)]('M'))_0x5f1aeb*=0xf4240;if(_0xa2f53a[_0x241769(0x1be)]&&_0xa2f53a[_0x241769(0x1be)][_0x241769(0x1f4)]('K'))_0x4c2f08*=0x3e8;if(_0xa2f53a['visits']&&_0xa2f53a[_0x241769(0x1be)][_0x241769(0x1f4)]('M'))_0x4c2f08*=0xf4240;_0x5b5623+=_0x5f1aeb,_0x330305+=_0x4c2f08;});const _0x2ca1db=document['getElementById']('total-ccu'),_0x194677=document[_0x35a6da(0x1e1)]('total-visits');if(_0x2ca1db)_0x2ca1db[_0x35a6da(0x1fe)]=formatNumber(_0x5b5623);if(_0x194677)_0x194677['innerText']=formatNumber(_0x330305);try{const _0x1d3bb2=_0x35a6da(0x1c8)+_0x472dca['join'](','),_0xa33f4=_0x16e881+_0x35a6da(0x1f9)+encodeURIComponent(_0x1d3bb2),_0x4c2087=await fetch(_0xa33f4);if(!_0x4c2087['ok'])throw new Error('Proxy\x20Error:\x20'+_0x4c2087[_0x35a6da(0x1e7)]);const _0x396dd8=await _0x4c2087['json'](),_0x3c2952={};_0x396dd8['data']&&Array[_0x35a6da(0x1d3)](_0x396dd8[_0x35a6da(0x222)])&&_0x396dd8['data'][_0x35a6da(0x1cf)](_0x56c556=>_0x3c2952[_0x56c556['id']]=_0x56c556);let _0x30f33e=0x0,_0x14eaee=0x0;Object[_0x35a6da(0x1ba)](_0x3c2952)['forEach'](_0x16c4ef=>{const _0x306fd3=_0x35a6da;_0x30f33e+=_0x16c4ef[_0x306fd3(0x1cd)],_0x14eaee+=_0x16c4ef[_0x306fd3(0x1be)];});if(_0x30f33e>0x0&&_0x2ca1db)_0x2ca1db['innerText']=formatNumber(_0x30f33e);if(_0x14eaee>0x0&&_0x194677)_0x194677[_0x35a6da(0x1fe)]=formatNumber(_0x14eaee);_0xe33745[_0x35a6da(0x1cf)](_0x3832d3=>{const _0x218bda=_0x35a6da,_0x1c4439=_0x3c2952[_0x3832d3['id']],_0x880df4=document[_0x218bda(0x1e1)](_0x218bda(0x213)+_0x3832d3['id']);if(_0x880df4&&_0x1c4439){const _0x2171e9=_0x880df4['querySelector'](_0x218bda(0x21a));if(_0x2171e9&&_0x1c4439[_0x218bda(0x20d)])_0x2171e9['innerText']=_0x1c4439[_0x218bda(0x20d)];const _0x24d81f=_0x880df4[_0x218bda(0x1f1)](_0x218bda(0x1c9)),_0x15a7d8=_0x880df4[_0x218bda(0x1f1)](_0x218bda(0x1ce));_0x24d81f&&(_0x24d81f['style'][_0x218bda(0x1e4)]=0x0,setTimeout(()=>{const _0x27c0fa=_0x218bda;_0x24d81f[_0x27c0fa(0x1fe)]=formatNumber(_0x1c4439['playing']),_0x24d81f['style'][_0x27c0fa(0x1e4)]=0x1;},0xc8)),_0x15a7d8&&(_0x15a7d8[_0x218bda(0x1da)][_0x218bda(0x1e4)]=0x0,setTimeout(()=>{const _0x235870=_0x218bda;_0x15a7d8[_0x235870(0x1fe)]=formatNumber(_0x1c4439[_0x235870(0x1be)]),_0x15a7d8[_0x235870(0x1da)][_0x235870(0x1e4)]=0x1;},0xc8));}});}catch(_0x219161){console[_0x35a6da(0x200)](_0x219161);}try{const _0x1160e5=_0x35a6da(0x1db)+_0x472dca[_0x35a6da(0x220)](',')+_0x35a6da(0x217),_0x505e6c=_0x16e881+_0x35a6da(0x1f9)+encodeURIComponent(_0x1160e5),_0x1e4273=await fetch(_0x505e6c);if(!_0x1e4273['ok'])throw new Error(_0x35a6da(0x1fb));const _0x41b492=await _0x1e4273[_0x35a6da(0x20b)](),_0x1690ba={};_0x41b492[_0x35a6da(0x222)]&&Array['isArray'](_0x41b492[_0x35a6da(0x222)])&&_0x41b492[_0x35a6da(0x222)][_0x35a6da(0x1cf)](_0x164528=>{const _0x50d5f7=_0x35a6da;_0x164528[_0x50d5f7(0x1de)]&&_0x164528[_0x50d5f7(0x1de)][_0x50d5f7(0x1ff)]>0x0&&(_0x1690ba[_0x164528['universeId']]=_0x164528[_0x50d5f7(0x1de)][0x0]['imageUrl']);}),_0xe33745[_0x35a6da(0x1cf)](_0x428478=>{const _0x292368=_0x35a6da,_0x3e5a7d=_0x1690ba[_0x428478['id']],_0x2ec2a5=document[_0x292368(0x1e1)]('game-card-'+_0x428478['id']);if(_0x2ec2a5&&_0x3e5a7d){const _0x5a36b1=_0x2ec2a5['querySelector'](_0x292368(0x1f3));if(_0x5a36b1){const _0x56d0e0=new Image();_0x56d0e0[_0x292368(0x206)]=_0x3e5a7d,_0x56d0e0[_0x292368(0x21f)]=()=>{const _0x3d598f=_0x292368;_0x5a36b1[_0x3d598f(0x1da)][_0x3d598f(0x201)]=_0x3d598f(0x209)+_0x3e5a7d+'\x27)';};}}});}catch(_0x4d462d){console[_0x35a6da(0x200)](_0x4d462d);}}fetch(_0x31b66c(0x1f5))[_0x31b66c(0x1ea)](_0x21d895=>_0x21d895[_0x31b66c(0x20b)]())[_0x31b66c(0x1ea)](_0x3d2ad7=>{const _0x148409=_0x31b66c,_0x249bbb=document[_0x148409(0x1e1)](_0x148409(0x21b));_0x3d2ad7['config']?.[_0x148409(0x1c2)]&&_0x3d2ad7['currentJobs'][_0x148409(0x1ff)]>0x0&&(_0x249bbb[_0x148409(0x1da)][_0x148409(0x1e2)]='flex',_0x3d2ad7[_0x148409(0x1d1)][_0x148409(0x1cf)](_0x3a5e0c=>{const _0x121cda=_0x148409,_0x14a521=document[_0x121cda(0x1ef)](_0x121cda(0x1c5));_0x14a521[_0x121cda(0x208)]=_0x121cda(0x1fd),_0x14a521[_0x121cda(0x1d7)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<img\x20src=\x22'+_0x3a5e0c[_0x121cda(0x1b9)]+_0x121cda(0x1d8)+_0x3a5e0c[_0x121cda(0x1e6)]+_0x121cda(0x1e9)+_0x3a5e0c['position']+_0x121cda(0x205),_0x249bbb[_0x121cda(0x1e0)](_0x14a521);}));const _0x383390=document[_0x148409(0x1e1)]('games-grid');_0x3d2ad7[_0x148409(0x1ee)]['forEach'](_0x42f42c=>{const _0x1e03ba=_0x148409,_0x286454=document[_0x1e03ba(0x1ef)]('div');_0x286454['className']=_0x1e03ba(0x1f0),_0x286454['id']=_0x1e03ba(0x213)+_0x42f42c['id'],_0x286454[_0x1e03ba(0x1d7)]='\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22game-img\x22\x20style=\x22background-image:\x20url(\x27'+_0x42f42c[_0x1e03ba(0x215)]+'\x27)\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22game-overlay\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<h4\x20class=\x22game-title-overlay\x22>'+_0x42f42c[_0x1e03ba(0x1cc)]+_0x1e03ba(0x1d6)+(_0x42f42c[_0x1e03ba(0x1bd)]||'0')+_0x1e03ba(0x1fc)+(_0x42f42c['visits']||'0')+'</span>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20</div>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<div\x20class=\x22card-content\x22>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<span\x20class=\x22role-tag\x22>'+_0x42f42c[_0x1e03ba(0x211)]+_0x1e03ba(0x20a)+_0x42f42c[_0x1e03ba(0x1cb)]+'</p>\x0a\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20<a\x20href=\x22'+_0x42f42c[_0x1e03ba(0x21c)]+_0x1e03ba(0x1f8),_0x383390['appendChild'](_0x286454);});const _0xb3e093=document[_0x148409(0x1e1)](_0x148409(0x1f7));_0x3d2ad7['code']['forEach'](_0x5e4807=>{const _0x3f5cf9=_0x148409,_0xd5be66=document[_0x3f5cf9(0x1ef)](_0x3f5cf9(0x1c5));_0xd5be66[_0x3f5cf9(0x208)]=_0x3f5cf9(0x1df);const _0x58b68c=_0x5e4807[_0x3f5cf9(0x20c)]['join']('\x0a');_0xd5be66[_0x3f5cf9(0x1d7)]=_0x3f5cf9(0x1f2)+_0x5e4807[_0x3f5cf9(0x1cc)]+_0x3f5cf9(0x221)+_0x5e4807[_0x3f5cf9(0x204)]+_0x3f5cf9(0x1ec)+_0x5e4807[_0x3f5cf9(0x1cb)]+_0x3f5cf9(0x1c4)+_0x58b68c+_0x3f5cf9(0x216),_0xb3e093[_0x3f5cf9(0x1e0)](_0xd5be66);});if(window['Prism'])Prism[_0x148409(0x21e)]();fetchBatchStats(_0x3d2ad7['games']);})[_0x31b66c(0x1ed)](_0x34b0e8=>console[_0x31b66c(0x1c0)](_0x34b0e8));function _0x4b78(_0xcd3f30,_0x2ef6f3){_0xcd3f30=_0xcd3f30-0x1b9;const _0x37e8e0=_0x37e8();let _0x4b7807=_0x37e8e0[_0xcd3f30];return _0x4b7807;}const yearSpan=document['getElementById']('year');yearSpan&&(yearSpan['innerText']=new Date()[_0x31b66c(0x207)]());
+const revealElements = document.querySelectorAll('.reveal');
+const revealOnScroll = () => {
+    const windowHeight = window.innerHeight;
+    const elementVisible = 50;
+    revealElements.forEach((reveal) => {
+        const elementTop = reveal.getBoundingClientRect().top;
+        if (elementTop < windowHeight - elementVisible) {
+            reveal.classList.add("active");
+        }
+    });
+};
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+
+window.addEventListener('scroll', () => {
+    const bg1 = document.getElementById('bg1');
+    if(bg1) {
+        const scrollPos = window.scrollY;
+        const height = window.innerHeight;
+        let opacity = 1 - (scrollPos / height);
+        if(opacity < 0) opacity = 0;
+        bg1.style.opacity = opacity;
+    }
+});
+
+const statsSection = document.getElementById('stats');
+const counters = document.querySelectorAll('.stat-number');
+let started = false;
+
+const startCounting = () => {
+    counters.forEach(counter => {
+        const rawTarget = counter.getAttribute('data-target');
+        const target = parseFloat(rawTarget);
+        const suffix = rawTarget.replace(/[0-9.]/g, ''); 
+        const speed = 100;
+
+        const updateCount = () => {
+            const currentText = counter.innerText.replace(suffix, ''); 
+            const count = +currentText || 0;
+            const inc = target / speed;
+
+            if (count < target) {
+                counter.innerText = Math.ceil(count + inc);
+                setTimeout(updateCount, 20);
+            } else {
+                counter.innerText = rawTarget;
+            }
+        };
+        updateCount();
+    });
+};
+
+if(statsSection) {
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting && !started) {
+            startCounting();
+            started = true;
+        }
+    });
+    observer.observe(statsSection);
+}
+
+function formatNumber(num) {
+    if (num >= 1000000000) return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'B';
+    if (num >= 1000000) return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+    if (num >= 1000) return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+    return num;
+}
+
+async function fetchBatchStats(gamesList) {
+    // PASTE YOUR CLOUDFLARE WORKER URL BELOW
+    const workerUrl = 'https://roblox.fabidevgames.workers.dev/'; 
+
+    if (workerUrl === 'YOUR_CLOUDFLARE_WORKER_URL_HERE') {
+        console.warn("Update workerUrl in main.js");
+        return;
+    }
+
+    const gamesWithId = gamesList.filter(g => g.id);
+    if (gamesWithId.length === 0) return;
+
+    const universeIds = gamesWithId.map(g => g.id);
+    
+    let backupCCU = 0;
+    let backupVisits = 0;
+    
+    gamesList.forEach(g => {
+        let ccu = parseFloat(g.ccu) || 0;
+        let vis = parseFloat(g.visits) || 0;
+        if(g.ccu && g.ccu.includes('K')) ccu *= 1000;
+        if(g.ccu && g.ccu.includes('M')) ccu *= 1000000;
+        if(g.visits && g.visits.includes('K')) vis *= 1000;
+        if(g.visits && g.visits.includes('M')) vis *= 1000000;
+        backupCCU += ccu;
+        backupVisits += vis;
+    });
+
+    const headerCCU = document.getElementById('total-ccu');
+    const headerVisits = document.getElementById('total-visits');
+    if(headerCCU) headerCCU.innerText = formatNumber(backupCCU);
+    if(headerVisits) headerVisits.innerText = formatNumber(backupVisits);
+
+    try {
+        const statsUrl = `https://games.roblox.com/v1/games?universeIds=${universeIds.join(',')}`;
+        const finalUrl = `${workerUrl}?url=${encodeURIComponent(statsUrl)}`;
+        
+        const statsRes = await fetch(finalUrl);
+        if (!statsRes.ok) throw new Error(`Proxy Error: ${statsRes.status}`);
+        
+        const statsData = await statsRes.json();
+
+        const statsMap = {};
+        if (statsData.data && Array.isArray(statsData.data)) {
+            statsData.data.forEach(stat => statsMap[stat.id] = stat);
+        }
+
+        let totalCCU = 0;
+        let totalVisits = 0;
+        Object.values(statsMap).forEach(stat => {
+            totalCCU += stat.playing;
+            totalVisits += stat.visits;
+        });
+        
+        if (totalCCU > 0 && headerCCU) headerCCU.innerText = formatNumber(totalCCU);
+        if (totalVisits > 0 && headerVisits) headerVisits.innerText = formatNumber(totalVisits);
+
+        gamesWithId.forEach(game => {
+            const stats = statsMap[game.id];
+            const card = document.getElementById(`game-card-${game.id}`);
+
+            if (card && stats) {
+                const titleEl = card.querySelector('.game-title-overlay');
+                if (titleEl && stats.name) titleEl.innerText = stats.name;
+
+                const ccuEl = card.querySelector('.live-ccu');
+                const visitsEl = card.querySelector('.live-visits');
+                
+                if(ccuEl) {
+                    ccuEl.style.opacity = 0;
+                    setTimeout(() => { ccuEl.innerText = formatNumber(stats.playing); ccuEl.style.opacity = 1; }, 200);
+                }
+                if(visitsEl) {
+                    visitsEl.style.opacity = 0;
+                    setTimeout(() => { visitsEl.innerText = formatNumber(stats.visits); visitsEl.style.opacity = 1; }, 200);
+                }
+            }
+        });
+    } catch (err) {
+        console.warn(err);
+    }
+
+    try {
+        const thumbUrl = `https://thumbnails.roblox.com/v1/games/multiget/thumbnails?universeIds=${universeIds.join(',')}&countPerUniverse=1&defaults=true&size=768x432&format=Png&isCircular=false`;
+        const finalThumbUrl = `${workerUrl}?url=${encodeURIComponent(thumbUrl)}`;
+        
+        const thumbRes = await fetch(finalThumbUrl);
+        if (!thumbRes.ok) throw new Error("Thumbnail fetch failed");
+        
+        const thumbData = await thumbRes.json();
+
+        const thumbMap = {};
+        if (thumbData.data && Array.isArray(thumbData.data)) {
+            thumbData.data.forEach(t => {
+                if(t.thumbnails && t.thumbnails.length > 0) {
+                    thumbMap[t.universeId] = t.thumbnails[0].imageUrl;
+                }
+            });
+        }
+
+        gamesWithId.forEach(game => {
+            const thumb = thumbMap[game.id];
+            const card = document.getElementById(`game-card-${game.id}`);
+            if (card && thumb) {
+                const imgEl = card.querySelector('.game-img');
+                if(imgEl) {
+                    const tempImg = new Image();
+                    tempImg.src = thumb;
+                    tempImg.onload = () => {
+                        imgEl.style.backgroundImage = `url('${thumb}')`;
+                    };
+                }
+            }
+        });
+    } catch (err) {
+        console.warn(err);
+    }
+}
+
+fetch('assets/data.json')
+    .then(response => response.json())
+    .then(data => {
+        
+        const jobContainer = document.getElementById('job-container');
+        if (data.config?.showJobs && data.currentJobs.length > 0) {
+            jobContainer.style.display = 'flex';
+            data.currentJobs.forEach(job => {
+                const jobCard = document.createElement('div');
+                jobCard.className = 'job-card';
+                jobCard.innerHTML = `
+                    <img src="${job.icon}" alt="Icon" class="job-icon">
+                    <div class="job-info">
+                        <div class="job-label">Associated With:</div>
+                        <div class="job-name">${job.studioName}</div>
+                        <div class="job-role">${job.position}</div>
+                    </div>
+                `;
+                jobContainer.appendChild(jobCard);
+            });
+        }
+
+        const gamesContainer = document.getElementById('games-grid');
+        data.games.forEach(game => {
+            const card = document.createElement('div');
+            card.className = 'glass-card game-card';
+            card.id = `game-card-${game.id}`; 
+            
+            card.innerHTML = `
+                <div class="game-img" style="background-image: url('${game.image}')">
+                    <div class="game-overlay">
+                        <h4 class="game-title-overlay">${game.title}</h4>
+                        <div class="game-stats">
+                            <div class="stat-item" title="Concurrent Users">
+                                <svg class="stat-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+                                <span class="live-ccu">${game.ccu || '0'}</span>
+                            </div>
+                            <div class="stat-item" title="Total Visits">
+                                <svg class="stat-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                                <span class="live-visits">${game.visits || '0'}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="role-tag">${game.role}</span>
+                    <p>${game.description}</p>
+                    <a href="${game.link}" target="_blank" class="card-link">Play ↗</a>
+                </div>
+            `;
+            gamesContainer.appendChild(card);
+        });
+
+        const codeContainer = document.getElementById('code-grid');
+        data.code.forEach(project => {
+            const card = document.createElement('div');
+            card.className = 'glass-card code-card';
+            const formattedCode = project.snippet.join('\n');
+            card.innerHTML = `
+                <div class="card-content">
+                    <div class="code-header">
+                        <h4>${project.title}</h4>
+                        <span class="lang-tag">${project.language}</span>
+                    </div>
+                    <p>${project.description}</p>
+                    <div class="code-preview">
+                        <pre><code class="language-lua">${formattedCode}</code></pre>
+                    </div>
+                </div>
+            `;
+            codeContainer.appendChild(card);
+        });
+
+        if(window.Prism) Prism.highlightAll();
+
+        fetchBatchStats(data.games);
+    })
+    .catch(err => console.error(err));
+
+const yearSpan = document.getElementById('year');
+if (yearSpan) {
+    yearSpan.innerText = new Date().getFullYear();
+}
