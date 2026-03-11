@@ -68,7 +68,6 @@ function formatNumber(num) {
 }
 
 async function fetchBatchStats(gamesList) {
-    // PASTE YOUR CLOUDFLARE WORKER URL BELOW
     const workerUrl = 'https://roblox.fabidevgames.workers.dev/'; 
 
     if (workerUrl === 'YOUR_CLOUDFLARE_WORKER_URL_HERE') {
