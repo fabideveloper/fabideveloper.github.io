@@ -12,44 +12,31 @@ const revealOnScroll = () => {
 window.addEventListener("scroll", revealOnScroll);
 revealOnScroll();
 
-window.addEventListener('scroll', () => {
-    const bg1 = document.getElementById('bg1');
-    if(bg1) {
-        const scrollPos = window.scrollY;
-        const height = window.innerHeight;
-        let opacity = 1 - (scrollPos / height);
-        if(opacity < 0) opacity = 0;
-        bg1.style.opacity = opacity;
-    }
-});
-
-const statsSection = document.getElementById('stats');
-const counters = document.querySelectorAll('.stat-number');
+const counters = document.querySelectorAll('.stat-number, .stat-counter-large');
 let started = false;
-
 const startCounting = () => {
     counters.forEach(counter => {
-        const rawTarget = counter.getAttribute('data-target');
-        const target = parseFloat(rawTarget);
-        const suffix = rawTarget.replace(/[0-9.]/g, ''); 
+        const targetAttr = counter.getAttribute('data-target');
+        if (!targetAttr) return;
+        const target = parseFloat(targetAttr);
+        const suffix = targetAttr.replace(/[0-9.]/g, ''); 
         const speed = 100;
-
         const updateCount = () => {
             const currentText = counter.innerText.replace(suffix, ''); 
             const count = +currentText || 0;
             const inc = target / speed;
-
             if (count < target) {
-                counter.innerText = Math.ceil(count + inc);
+                counter.innerText = Math.ceil(count + inc) + suffix;
                 setTimeout(updateCount, 20);
             } else {
-                counter.innerText = rawTarget;
+                counter.innerText = targetAttr;
             }
         };
         updateCount();
     });
 };
 
+const statsSection = document.getElementById('stats');
 if(statsSection) {
     const observer = new IntersectionObserver((entries) => {
         if (entries[0].isIntersecting && !started) {
@@ -67,47 +54,50 @@ function formatNumber(num) {
     return num;
 }
 
+function parseStatString(stat) {
+    if (!stat) return 0;
+    let val = parseFloat(stat) || 0;
+    const statStr = String(stat).toUpperCase();
+    if (statStr.includes('K')) val *= 1000;
+    if (statStr.includes('M')) val *= 1000000;
+    if (statStr.includes('B')) val *= 1000000000;
+    return val;
+}
+
 async function fetchBatchStats(gamesList) {
     const workerUrl = 'https://roblox.fabidevgames.workers.dev/'; 
-
-    if (workerUrl === 'YOUR_CLOUDFLARE_WORKER_URL_HERE') {
-        console.warn("Update workerUrl in main.js");
-        return;
-    }
+    if (workerUrl === 'YOUR_CLOUDFLARE_WORKER_URL_HERE') return;
 
     const gamesWithId = gamesList.filter(g => g.id);
     if (gamesWithId.length === 0) return;
 
     const universeIds = gamesWithId.map(g => g.id);
-    
     let backupCCU = 0;
     let backupVisits = 0;
     
     gamesList.forEach(g => {
-        let ccu = parseFloat(g.ccu) || 0;
-        let vis = parseFloat(g.visits) || 0;
-        if(g.ccu && g.ccu.includes('K')) ccu *= 1000;
-        if(g.ccu && g.ccu.includes('M')) ccu *= 1000000;
-        if(g.visits && g.visits.includes('K')) vis *= 1000;
-        if(g.visits && g.visits.includes('M')) vis *= 1000000;
-        backupCCU += ccu;
-        backupVisits += vis;
+        backupCCU += parseStatString(g.ccu);
+        backupVisits += parseStatString(g.visits);
     });
 
     const headerCCU = document.getElementById('total-ccu');
     const headerVisits = document.getElementById('total-visits');
-    if(headerCCU) headerCCU.innerText = formatNumber(backupCCU);
-    if(headerVisits) headerVisits.innerText = formatNumber(backupVisits);
+    if(headerCCU) {
+        headerCCU.classList.remove('skeleton-text');
+        headerCCU.innerText = formatNumber(backupCCU);
+    }
+    if(headerVisits) {
+        headerVisits.classList.remove('skeleton-text');
+        headerVisits.innerText = formatNumber(backupVisits);
+    }
 
     try {
         const statsUrl = `https://games.roblox.com/v1/games?universeIds=${universeIds.join(',')}`;
         const finalUrl = `${workerUrl}?url=${encodeURIComponent(statsUrl)}`;
-        
         const statsRes = await fetch(finalUrl);
-        if (!statsRes.ok) throw new Error(`Proxy Error: ${statsRes.status}`);
+        if (!statsRes.ok) throw new Error();
         
         const statsData = await statsRes.json();
-
         const statsMap = {};
         if (statsData.data && Array.isArray(statsData.data)) {
             statsData.data.forEach(stat => statsMap[stat.id] = stat);
@@ -125,38 +115,33 @@ async function fetchBatchStats(gamesList) {
 
         gamesWithId.forEach(game => {
             const stats = statsMap[game.id];
-            const card = document.getElementById(`game-card-${game.id}`);
-
-            if (card && stats) {
-                const titleEl = card.querySelector('.game-title-overlay');
-                if (titleEl && stats.name) titleEl.innerText = stats.name;
-
-                const ccuEl = card.querySelector('.live-ccu');
-                const visitsEl = card.querySelector('.live-visits');
-                
-                if(ccuEl) {
-                    ccuEl.style.opacity = 0;
-                    setTimeout(() => { ccuEl.innerText = formatNumber(stats.playing); ccuEl.style.opacity = 1; }, 200);
+            const cards = document.querySelectorAll(`[data-game-id="${game.id}"]`);
+            cards.forEach(card => {
+                if (stats) {
+                    const titleEl = card.querySelector('.game-title');
+                    if (titleEl && stats.name) titleEl.innerText = stats.name;
+                    const ccuEl = card.querySelector('.live-ccu');
+                    const visitsEl = card.querySelector('.live-visits');
+                    if(ccuEl) {
+                        ccuEl.classList.remove('skeleton-text');
+                        ccuEl.innerText = formatNumber(stats.playing);
+                    }
+                    if(visitsEl) {
+                        visitsEl.classList.remove('skeleton-text');
+                        visitsEl.innerText = formatNumber(stats.visits);
+                    }
                 }
-                if(visitsEl) {
-                    visitsEl.style.opacity = 0;
-                    setTimeout(() => { visitsEl.innerText = formatNumber(stats.visits); visitsEl.style.opacity = 1; }, 200);
-                }
-            }
+            });
         });
-    } catch (err) {
-        console.warn(err);
-    }
+    } catch (err) {}
 
     try {
         const thumbUrl = `https://thumbnails.roblox.com/v1/games/multiget/thumbnails?universeIds=${universeIds.join(',')}&countPerUniverse=1&defaults=true&size=768x432&format=Png&isCircular=false`;
         const finalThumbUrl = `${workerUrl}?url=${encodeURIComponent(thumbUrl)}`;
-        
         const thumbRes = await fetch(finalThumbUrl);
-        if (!thumbRes.ok) throw new Error("Thumbnail fetch failed");
+        if (!thumbRes.ok) throw new Error();
         
         const thumbData = await thumbRes.json();
-
         const thumbMap = {};
         if (thumbData.data && Array.isArray(thumbData.data)) {
             thumbData.data.forEach(t => {
@@ -168,37 +153,159 @@ async function fetchBatchStats(gamesList) {
 
         gamesWithId.forEach(game => {
             const thumb = thumbMap[game.id];
-            const card = document.getElementById(`game-card-${game.id}`);
-            if (card && thumb) {
-                const imgEl = card.querySelector('.game-img');
-                if(imgEl) {
-                    const tempImg = new Image();
-                    tempImg.src = thumb;
-                    tempImg.onload = () => {
-                        imgEl.style.backgroundImage = `url('${thumb}')`;
-                    };
+            const cards = document.querySelectorAll(`[data-game-id="${game.id}"]`);
+            cards.forEach(card => {
+                if (thumb) {
+                    const imgEl = card.querySelector('.game-img');
+                    if(imgEl) {
+                        const tempImg = new Image();
+                        tempImg.src = thumb;
+                        tempImg.onload = () => {
+                            imgEl.classList.remove('skeleton');
+                            imgEl.style.backgroundImage = `url('${thumb}')`;
+                        };
+                    }
                 }
-            }
+            });
         });
-    } catch (err) {
-        console.warn(err);
-    }
+    } catch (err) {}
 }
+
+const setupCarousel = () => {
+    const track = document.getElementById('carousel-track');
+    const leftBtn = document.getElementById('btn-left');
+    const rightBtn = document.getElementById('btn-right');
+    
+    if (!track) return;
+
+    let items = Array.from(track.children);
+    if (items.length === 0) return;
+
+    let itemWidth = items[0].getBoundingClientRect().width + 24; 
+    let currentIndex = items.length;
+    let isTransitioning = false;
+
+    items.forEach(item => {
+        track.appendChild(item.cloneNode(true));
+    });
+    items.forEach(item => {
+        track.insertBefore(item.cloneNode(true), track.firstChild);
+    });
+
+    track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+
+    const updateWidths = () => {
+        if(track.children.length > 0) {
+            itemWidth = track.children[0].getBoundingClientRect().width + 24;
+            track.style.transition = 'none';
+            track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        }
+    };
+    window.addEventListener('resize', updateWidths);
+
+    const slide = (direction) => {
+        if (isTransitioning) return;
+        isTransitioning = true;
+        track.style.transition = 'transform 0.4s ease-in-out';
+        
+        if (direction === 'right') {
+            currentIndex++;
+        } else {
+            currentIndex--;
+        }
+        track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    };
+
+    if (rightBtn) rightBtn.addEventListener('click', () => slide('right'));
+    if (leftBtn) leftBtn.addEventListener('click', () => slide('left'));
+
+    track.addEventListener('transitionend', () => {
+        isTransitioning = false;
+        
+        if (currentIndex <= 0) {
+            track.style.transition = 'none';
+            currentIndex = items.length;
+            track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        }
+        
+        if (currentIndex >= track.children.length - items.length) {
+            track.style.transition = 'none';
+            currentIndex = items.length;
+            track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        }
+    });
+
+    let isDragging = false;
+    let startPos = 0;
+    let currentTranslate = 0;
+
+    track.addEventListener('mousedown', (e) => {
+        if (isTransitioning) return;
+        isDragging = true;
+        startPos = e.pageX;
+        track.classList.add('active');
+        const matrix = window.getComputedStyle(track).transform;
+        if (matrix !== 'none') {
+            currentTranslate = parseInt(matrix.split(',')[4].trim());
+        }
+        track.style.transition = 'none';
+    });
+
+    window.addEventListener('mousemove', (e) => {
+        if (!isDragging) return;
+        const currentPosition = e.pageX;
+        const diff = currentPosition - startPos;
+        track.style.transform = `translateX(${currentTranslate + diff}px)`;
+    });
+
+    window.addEventListener('mouseup', (e) => {
+        if (!isDragging) return;
+        isDragging = false;
+        track.classList.remove('active');
+        
+        const endPos = e.pageX;
+        const diff = endPos - startPos;
+        
+        if (Math.abs(diff) > 100) {
+            if (diff > 0) slide('left');
+            else slide('right');
+        } else {
+            track.style.transition = 'transform 0.3s ease-in-out';
+            track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        }
+    });
+
+    track.addEventListener('mouseleave', () => {
+        if (isDragging) {
+            isDragging = false;
+            track.classList.remove('active');
+            track.style.transition = 'transform 0.3s ease-in-out';
+            track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+        }
+    });
+};
 
 fetch('assets/data.json')
     .then(response => response.json())
-    .then(data => {
+    .then(async data => {
+        data.games.sort((a, b) => {
+            const ccuA = parseStatString(a.ccu);
+            const ccuB = parseStatString(b.ccu);
+            if (ccuA !== ccuB) return ccuB - ccuA;
+            const visitsA = parseStatString(a.visits);
+            const visitsB = parseStatString(b.visits);
+            return visitsB - visitsA;
+        });
         
         const jobContainer = document.getElementById('job-container');
-        if (data.config?.showJobs && data.currentJobs.length > 0) {
-            jobContainer.style.display = 'flex';
+        if (data.config?.showJobs && data.currentJobs && data.currentJobs.length > 0) {
             data.currentJobs.forEach(job => {
                 const jobCard = document.createElement('div');
                 jobCard.className = 'job-card';
                 jobCard.innerHTML = `
                     <img src="${job.icon}" alt="Icon" class="job-icon">
                     <div class="job-info">
-                        <div class="job-label">Associated With:</div>
+                        <div class="job-label">Associated With</div>
                         <div class="job-name">${job.studioName}</div>
                         <div class="job-role">${job.position}</div>
                     </div>
@@ -207,64 +314,33 @@ fetch('assets/data.json')
             });
         }
 
-        const gamesContainer = document.getElementById('games-grid');
+        const track = document.getElementById('carousel-track');
         data.games.forEach(game => {
-            const card = document.createElement('div');
-            card.className = 'glass-card game-card';
-            card.id = `game-card-${game.id}`; 
-            
+            const card = document.createElement('a');
+            card.href = game.link;
+            card.target = "_blank";
+            card.className = 'game-card';
+            card.setAttribute('data-game-id', game.id);
             card.innerHTML = `
-                <div class="game-img" style="background-image: url('${game.image}')">
-                    <div class="game-overlay">
-                        <h4 class="game-title-overlay">${game.title}</h4>
-                        <div class="game-stats">
-                            <div class="stat-item" title="Concurrent Users">
-                                <svg class="stat-icon" viewBox="0 0 24 24"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
-                                <span class="live-ccu">${game.ccu || '0'}</span>
-                            </div>
-                            <div class="stat-item" title="Total Visits">
-                                <svg class="stat-icon" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                                <span class="live-visits">${game.visits || '0'}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-content">
-                    <span class="role-tag">${game.role}</span>
-                    <p>${game.description}</p>
-                    <a href="${game.link}" target="_blank" class="card-link">Play ↗</a>
-                </div>
-            `;
-            gamesContainer.appendChild(card);
-        });
-
-        const codeContainer = document.getElementById('code-grid');
-        data.code.forEach(project => {
-            const card = document.createElement('div');
-            card.className = 'glass-card code-card';
-            const formattedCode = project.snippet.join('\n');
-            card.innerHTML = `
-                <div class="card-content">
-                    <div class="code-header">
-                        <h4>${project.title}</h4>
-                        <span class="lang-tag">${project.language}</span>
-                    </div>
-                    <p>${project.description}</p>
-                    <div class="code-preview">
-                        <pre><code class="language-lua">${formattedCode}</code></pre>
+                <div class="game-img skeleton"></div>
+                <div class="game-overlay">
+                    <h4 class="game-title">${game.title}</h4>
+                    <div class="game-stats-overlay">
+                        <span class="stat-item">
+                            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+                            <span class="live-ccu skeleton-text">0000</span>
+                        </span>
+                        <span class="stat-item">
+                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+                            <span class="live-visits skeleton-text">000000</span>
+                        </span>
                     </div>
                 </div>
             `;
-            codeContainer.appendChild(card);
+            track.appendChild(card);
         });
 
-        if(window.Prism) Prism.highlightAll();
-
-        fetchBatchStats(data.games);
+        setupCarousel();
+        await fetchBatchStats(data.games);
     })
     .catch(err => console.error(err));
-
-const yearSpan = document.getElementById('year');
-if (yearSpan) {
-    yearSpan.innerText = new Date().getFullYear();
-}
