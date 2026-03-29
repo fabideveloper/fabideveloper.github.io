@@ -1,12 +1,9 @@
 const revealElements = document.querySelectorAll('.reveal');
 const revealOnScroll = () => {
     const windowHeight = window.innerHeight;
-    const elementVisible = 50;
     revealElements.forEach((reveal) => {
         const elementTop = reveal.getBoundingClientRect().top;
-        if (elementTop < windowHeight - elementVisible) {
-            reveal.classList.add("active");
-        }
+        if (elementTop < windowHeight - 50) reveal.classList.add("active");
     });
 };
 window.addEventListener("scroll", revealOnScroll);
@@ -48,19 +45,19 @@ if(statsSection) {
 }
 
 function formatNumber(num) {
-    if (num >= 1000000000) return (num / 1000000000).toFixed(1).replace(/\.0$/, '') + 'B';
-    if (num >= 1000000) return (num / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
-    if (num >= 1000) return (num / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+    if (num >= 1e9) return (num / 1e9).toFixed(1).replace(/\.0$/, '') + 'B';
+    if (num >= 1e6) return (num / 1e6).toFixed(1).replace(/\.0$/, '') + 'M';
+    if (num >= 1e3) return (num / 1e3).toFixed(1).replace(/\.0$/, '') + 'K';
     return num;
 }
 
 function parseStatString(stat) {
     if (!stat) return 0;
     let val = parseFloat(stat) || 0;
-    const statStr = String(stat).toUpperCase();
-    if (statStr.includes('K')) val *= 1000;
-    if (statStr.includes('M')) val *= 1000000;
-    if (statStr.includes('B')) val *= 1000000000;
+    const s = String(stat).toUpperCase();
+    if (s.includes('K')) val *= 1e3;
+    if (s.includes('M')) val *= 1e6;
+    if (s.includes('B')) val *= 1e9;
     return val;
 }
 
@@ -72,275 +69,152 @@ async function fetchBatchStats(gamesList) {
     if (gamesWithId.length === 0) return;
 
     const universeIds = gamesWithId.map(g => g.id);
-    let backupCCU = 0;
-    let backupVisits = 0;
-    
-    gamesList.forEach(g => {
-        backupCCU += parseStatString(g.ccu);
-        backupVisits += parseStatString(g.visits);
-    });
+    let backupCCU = 0, backupVisits = 0;
+    gamesList.forEach(g => { backupCCU += parseStatString(g.ccu); backupVisits += parseStatString(g.visits); });
 
-    const headerCCU = document.getElementById('total-ccu');
-    const headerVisits = document.getElementById('total-visits');
-    if(headerCCU) {
-        headerCCU.classList.remove('skeleton-text');
-        headerCCU.innerText = formatNumber(backupCCU);
-    }
-    if(headerVisits) {
-        headerVisits.classList.remove('skeleton-text');
-        headerVisits.innerText = formatNumber(backupVisits);
-    }
+    const hCCU = document.getElementById('total-ccu'), hVis = document.getElementById('total-visits');
+    if(hCCU) { hCCU.classList.remove('skeleton-text'); hCCU.innerText = formatNumber(backupCCU); }
+    if(hVis) { hVis.classList.remove('skeleton-text'); hVis.innerText = formatNumber(backupVisits); }
 
     try {
-        const statsUrl = `https://games.roblox.com/v1/games?universeIds=${universeIds.join(',')}`;
-        const finalUrl = `${workerUrl}?url=${encodeURIComponent(statsUrl)}`;
-        const statsRes = await fetch(finalUrl);
-        if (!statsRes.ok) throw new Error();
-        
-        const statsData = await statsRes.json();
-        const statsMap = {};
-        if (statsData.data && Array.isArray(statsData.data)) {
-            statsData.data.forEach(stat => statsMap[stat.id] = stat);
-        }
+        const url = `${workerUrl}?url=${encodeURIComponent(`https://games.roblox.com/v1/games?universeIds=${universeIds.join(',')}`)}`;
+        const res = await fetch(url);
+        const data = await res.json();
+        const map = {};
+        if (data.data) data.data.forEach(s => map[s.id] = s);
 
-        let totalCCU = 0;
-        let totalVisits = 0;
-        Object.values(statsMap).forEach(stat => {
-            totalCCU += stat.playing;
-            totalVisits += stat.visits;
-        });
-        
-        if (totalCCU > 0 && headerCCU) headerCCU.innerText = formatNumber(totalCCU);
-        if (totalVisits > 0 && headerVisits) headerVisits.innerText = formatNumber(totalVisits);
+        let tCCU = 0, tVis = 0;
+        Object.values(map).forEach(s => { tCCU += s.playing; tVis += s.visits; });
+        if (tCCU > 0 && hCCU) hCCU.innerText = formatNumber(tCCU);
+        if (tVis > 0 && hVis) hVis.innerText = formatNumber(tVis);
 
         gamesWithId.forEach(game => {
-            const stats = statsMap[game.id];
+            const s = map[game.id];
             const cards = document.querySelectorAll(`[data-game-id="${game.id}"]`);
             cards.forEach(card => {
-                if (stats) {
-                    const titleEl = card.querySelector('.game-title');
-                    if (titleEl && stats.name) titleEl.innerText = stats.name;
-                    const ccuEl = card.querySelector('.live-ccu');
-                    const visitsEl = card.querySelector('.live-visits');
-                    if(ccuEl) {
-                        ccuEl.classList.remove('skeleton-text');
-                        ccuEl.innerText = formatNumber(stats.playing);
-                    }
-                    if(visitsEl) {
-                        visitsEl.classList.remove('skeleton-text');
-                        visitsEl.innerText = formatNumber(stats.visits);
-                    }
+                if (s) {
+                    const t = card.querySelector('.game-title'), c = card.querySelector('.live-ccu'), v = card.querySelector('.live-visits');
+                    if (t && s.name) t.innerText = s.name;
+                    if (c) { c.classList.remove('skeleton-text'); c.innerText = formatNumber(s.playing); }
+                    if (v) { v.classList.remove('skeleton-text'); v.innerText = formatNumber(s.visits); }
                 }
             });
         });
-    } catch (err) {}
 
-    try {
-        const thumbUrl = `https://thumbnails.roblox.com/v1/games/multiget/thumbnails?universeIds=${universeIds.join(',')}&countPerUniverse=1&defaults=true&size=768x432&format=Png&isCircular=false`;
-        const finalThumbUrl = `${workerUrl}?url=${encodeURIComponent(thumbUrl)}`;
-        const thumbRes = await fetch(finalThumbUrl);
-        if (!thumbRes.ok) throw new Error();
-        
-        const thumbData = await thumbRes.json();
-        const thumbMap = {};
-        if (thumbData.data && Array.isArray(thumbData.data)) {
-            thumbData.data.forEach(t => {
-                if(t.thumbnails && t.thumbnails.length > 0) {
-                    thumbMap[t.universeId] = t.thumbnails[0].imageUrl;
-                }
-            });
-        }
+        const thumbUrl = `${workerUrl}?url=${encodeURIComponent(`https://thumbnails.roblox.com/v1/games/multiget/thumbnails?universeIds=${universeIds.join(',')}&countPerUniverse=1&defaults=true&size=768x432&format=Png&isCircular=false`)}`;
+        const tRes = await fetch(thumbUrl);
+        const tData = await tRes.json();
+        const tMap = {};
+        if (tData.data) tData.data.forEach(t => { if(t.thumbnails[0]) tMap[t.universeId] = t.thumbnails[0].imageUrl; });
 
         gamesWithId.forEach(game => {
-            const thumb = thumbMap[game.id];
+            const img = tMap[game.id];
             const cards = document.querySelectorAll(`[data-game-id="${game.id}"]`);
             cards.forEach(card => {
-                if (thumb) {
-                    const imgEl = card.querySelector('.game-img');
-                    if(imgEl) {
-                        const tempImg = new Image();
-                        tempImg.src = thumb;
-                        tempImg.onload = () => {
-                            imgEl.classList.remove('skeleton');
-                            imgEl.style.backgroundImage = `url('${thumb}')`;
-                        };
-                    }
+                const el = card.querySelector('.game-img');
+                if (img && el) {
+                    const tmp = new Image(); tmp.src = img;
+                    tmp.onload = () => { el.classList.remove('skeleton'); el.style.backgroundImage = `url('${img}')`; };
                 }
             });
         });
-    } catch (err) {}
+    } catch (e) {}
 }
 
 const setupCarousel = () => {
     const track = document.getElementById('carousel-track');
-    const leftBtn = document.getElementById('btn-left');
-    const rightBtn = document.getElementById('btn-right');
+    const leftBtn = document.getElementById('btn-left'), rightBtn = document.getElementById('btn-right');
+    const viewport = document.getElementById('games-grid');
+    if (!track || track.children.length === 0) return;
+
+    const originalLength = track.children.length;
+    const cards = Array.from(track.children);
+    cards.forEach(c => track.appendChild(c.cloneNode(true)));
+    cards.forEach(c => track.appendChild(c.cloneNode(true)));
     
-    if (!track) return;
+    let isDragging = false, startX, scrollL, autoTimer, resumeTimer;
 
-    let items = Array.from(track.children);
-    if (items.length === 0) return;
+    const getUnit = () => track.children[0].offsetWidth + 20;
+    const getBaseWidth = () => getUnit() * originalLength;
 
-    let itemWidth = items[0].getBoundingClientRect().width + 24; 
-    let currentIndex = items.length;
-    let isTransitioning = false;
+    viewport.scrollLeft = getBaseWidth();
 
-    items.forEach(item => {
-        track.appendChild(item.cloneNode(true));
-    });
-    items.forEach(item => {
-        track.insertBefore(item.cloneNode(true), track.firstChild);
-    });
-
-    track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-
-    const updateWidths = () => {
-        if(track.children.length > 0) {
-            itemWidth = track.children[0].getBoundingClientRect().width + 24;
-            track.style.transition = 'none';
-            track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-        }
-    };
-    window.addEventListener('resize', updateWidths);
-
-    const slide = (direction) => {
-        if (isTransitioning) return;
-        isTransitioning = true;
-        track.style.transition = 'transform 0.4s ease-in-out';
-        
-        if (direction === 'right') {
-            currentIndex++;
-        } else {
-            currentIndex--;
-        }
-        track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    const checkInfinite = () => {
+        const w = getBaseWidth();
+        if (viewport.scrollLeft <= 0) viewport.scrollLeft = w;
+        else if (viewport.scrollLeft >= w * 2) viewport.scrollLeft = w;
     };
 
-    if (rightBtn) rightBtn.addEventListener('click', () => slide('right'));
-    if (leftBtn) leftBtn.addEventListener('click', () => slide('left'));
+    viewport.addEventListener('scroll', checkInfinite);
 
-    track.addEventListener('transitionend', () => {
-        isTransitioning = false;
-        
-        if (currentIndex <= 0) {
-            track.style.transition = 'none';
-            currentIndex = items.length;
-            track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-        }
-        
-        if (currentIndex >= track.children.length - items.length) {
-            track.style.transition = 'none';
-            currentIndex = items.length;
-            track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-        }
-    });
+    const startAuto = () => {
+        clearInterval(autoTimer);
+        autoTimer = setInterval(() => {
+            viewport.scrollBy({ left: 1, behavior: 'auto' });
+        }, 30);
+    };
 
-    let isDragging = false;
-    let startPos = 0;
-    let currentTranslate = 0;
+    const stopAuto = () => {
+        clearInterval(autoTimer);
+        clearTimeout(resumeTimer);
+    };
 
-    track.addEventListener('mousedown', (e) => {
-        if (isTransitioning) return;
-        isDragging = true;
-        startPos = e.pageX;
-        track.classList.add('active');
-        const matrix = window.getComputedStyle(track).transform;
-        if (matrix !== 'none') {
-            currentTranslate = parseInt(matrix.split(',')[4].trim());
-        }
-        track.style.transition = 'none';
-    });
+    const requestResume = () => {
+        clearTimeout(resumeTimer);
+        resumeTimer = setTimeout(startAuto, 5000);
+    };
 
-    window.addEventListener('mousemove', (e) => {
+    startAuto();
+
+    const start = (e) => {
+        stopAuto();
+        isDragging = true; track.classList.add('active');
+        startX = (e.pageX || e.touches[0].pageX) - viewport.offsetLeft;
+        scrollL = viewport.scrollLeft;
+    };
+
+    const end = () => {
         if (!isDragging) return;
-        const currentPosition = e.pageX;
-        const diff = currentPosition - startPos;
-        track.style.transform = `translateX(${currentTranslate + diff}px)`;
-    });
+        isDragging = false; track.classList.remove('active');
+        requestResume();
+    };
 
-    window.addEventListener('mouseup', (e) => {
+    const move = (e) => {
         if (!isDragging) return;
-        isDragging = false;
-        track.classList.remove('active');
-        
-        const endPos = e.pageX;
-        const diff = endPos - startPos;
-        
-        if (Math.abs(diff) > 100) {
-            if (diff > 0) slide('left');
-            else slide('right');
-        } else {
-            track.style.transition = 'transform 0.3s ease-in-out';
-            track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-        }
-    });
+        const x = (e.pageX || e.touches[0].pageX) - viewport.offsetLeft;
+        viewport.scrollLeft = scrollL - (x - startX);
+    };
 
-    track.addEventListener('mouseleave', () => {
-        if (isDragging) {
-            isDragging = false;
-            track.classList.remove('active');
-            track.style.transition = 'transform 0.3s ease-in-out';
-            track.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
-        }
-    });
+    viewport.addEventListener('mousedown', start);
+    viewport.addEventListener('touchstart', start, {passive: true});
+    window.addEventListener('mouseup', end);
+    window.addEventListener('touchend', end);
+    window.addEventListener('mousemove', move);
+    viewport.addEventListener('touchmove', move, {passive: true});
+
+    leftBtn.onclick = () => { stopAuto(); viewport.scrollBy({ left: -getUnit(), behavior: 'smooth' }); requestResume(); };
+    rightBtn.onclick = () => { stopAuto(); viewport.scrollBy({ left: getUnit(), behavior: 'smooth' }); requestResume(); };
 };
 
-fetch('assets/data.json')
-    .then(response => response.json())
-    .then(async data => {
-        data.games.sort((a, b) => {
-            const ccuA = parseStatString(a.ccu);
-            const ccuB = parseStatString(b.ccu);
-            if (ccuA !== ccuB) return ccuB - ccuA;
-            const visitsA = parseStatString(a.visits);
-            const visitsB = parseStatString(b.visits);
-            return visitsB - visitsA;
+fetch('assets/data.json').then(r => r.json()).then(async d => {
+    d.games.sort((a, b) => (parseStatString(b.ccu) - parseStatString(a.ccu)) || (parseStatString(b.visits) - parseStatString(a.visits)));
+    const jobs = document.getElementById('job-container');
+    if (d.config?.showJobs && d.currentJobs) {
+        d.currentJobs.forEach(j => {
+            const card = document.createElement(j.link ? 'a' : 'div');
+            card.className = 'job-card';
+            if (j.link) { card.href = j.link; card.target = "_blank"; }
+            card.innerHTML = `<img src="${j.icon}" class="job-icon"><div class="job-info"><div class="job-label">Associated With</div><div class="job-name">${j.studioName}</div><div class="job-role">${j.position}</div></div>`;
+            jobs.appendChild(card);
         });
-        
-        const jobContainer = document.getElementById('job-container');
-        if (data.config?.showJobs && data.currentJobs && data.currentJobs.length > 0) {
-            data.currentJobs.forEach(job => {
-                const jobCard = document.createElement('div');
-                jobCard.className = 'job-card';
-                jobCard.innerHTML = `
-                    <img src="${job.icon}" alt="Icon" class="job-icon">
-                    <div class="job-info">
-                        <div class="job-label">Associated With</div>
-                        <div class="job-name">${job.studioName}</div>
-                        <div class="job-role">${job.position}</div>
-                    </div>
-                `;
-                jobContainer.appendChild(jobCard);
-            });
-        }
-
-        const track = document.getElementById('carousel-track');
-        data.games.forEach(game => {
-            const card = document.createElement('a');
-            card.href = game.link;
-            card.target = "_blank";
-            card.className = 'game-card';
-            card.setAttribute('data-game-id', game.id);
-            card.innerHTML = `
-                <div class="game-img skeleton"></div>
-                <div class="game-overlay">
-                    <h4 class="game-title">${game.title}</h4>
-                    <div class="game-stats-overlay">
-                        <span class="stat-item">
-                            <svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
-                            <span class="live-ccu skeleton-text">0000</span>
-                        </span>
-                        <span class="stat-item">
-                            <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-                            <span class="live-visits skeleton-text">000000</span>
-                        </span>
-                    </div>
-                </div>
-            `;
-            track.appendChild(card);
-        });
-
-        setupCarousel();
-        await fetchBatchStats(data.games);
-    })
-    .catch(err => console.error(err));
+    }
+    const track = document.getElementById('carousel-track');
+    d.games.forEach(g => {
+        const card = document.createElement('a');
+        card.href = g.link; card.target = "_blank"; card.className = 'game-card'; card.setAttribute('data-game-id', g.id);
+        card.innerHTML = `<div class="game-img skeleton"></div><div class="game-overlay"><h4 class="game-title">${g.title}</h4><div class="game-stats-overlay"><span class="stat-item"><svg viewBox="0 0 24 24"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg><span class="live-ccu skeleton-text">0000</span></span><span class="stat-item"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg><span class="live-visits skeleton-text">000000</span></span></div></div>`;
+        track.appendChild(card);
+    });
+    setupCarousel();
+    await fetchBatchStats(d.games);
+});

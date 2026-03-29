@@ -6,22 +6,32 @@
     {
       "studioName": "DoBig",
       "position": "Game Partnerships",
-      "icon": "assets/images/DoBig-Logo.png"
+      "icon": "assets/images/DoBig-Logo.png",
+      "link" : "https://dobig.com/"
+    },
+    {
+      "studioName": "Misfits Gaming Studios",
+      "position": "Game Partnerships",
+      "icon": "assets/images/Misfits-Logo.png",
+      "link": "https://studio.misfitsgaming.gg/"
     },
     {
       "studioName": "StarBite",
       "position": "COO",
-      "icon": "assets/images/Starbite-Logo.png"
+      "icon": "assets/images/Starbite-Logo.png",
+      "link":""
     },
     {
       "studioName": "Simple Bricks",
       "position": "Fullstack Developer",
-      "icon": "assets/images/SB-Logo.png"
+      "icon": "assets/images/SB-Logo.png",
+      "link": "https://simplebricks.com.au/"
     },
     {
       "studioName": "IX Studios",
       "position": "Fullstack Developer",
-      "icon": "assets/images/IX-Logo.png"
+      "icon": "assets/images/IX-Logo.png",
+      "link":"https://ixstudiodev.com/"
     }
   
   ],
@@ -89,8 +99,6 @@
       "ccu": "Loading...",    
       "visits": "Loading..."  
     }
-  ],
-  "code": [
   ]
 
 }
