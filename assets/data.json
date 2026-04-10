@@ -34,8 +34,17 @@
       "link":"https://ixstudiodev.com/"
     }
   
-  ],
+  ], 
 "games": [
+  {
+      "title": "[Unearthed 🏜️] Arcane Lineage",
+      "role": " Fullstack Developer",
+      "link": "https://www.roblox.com/games/10595058975/Arcane-Lineage",
+      "description": "Provided bug fixing and backend scripting.",
+      "id": "3846592040",  
+      "ccu": "Loading...",    
+      "visits": "Loading..."  
+    },
     {
       "title": "🏁 Guess the Country Flag or Die!",
       "role": "Lead Scripter, Fullstack Developer",
