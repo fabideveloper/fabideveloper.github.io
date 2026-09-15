@@ -36,6 +36,15 @@
   
   ], 
 "games": [
+   {
+      "title": "Survive The Slope!",
+      "role": "Lead Scripter, Fullstack Developer, Co-Owner",
+      "link": "https://www.roblox.com/games/91575878912978/Survive-The-Slope",
+      "description": "Solely developed this game from scratch",
+      "id": "10171730665",  
+      "ccu": "Loading...",    
+      "visits": "Loading..."  
+    },
   {
       "title": "[Unearthed 🏜️] Arcane Lineage",
       "role": " Fullstack Developer",
@@ -47,7 +56,7 @@
     },
     {
       "title": "🏁 Guess the Country Flag or Die!",
-      "role": "Lead Scripter, Fullstack Developer",
+      "role": "Lead Scripter, Fullstack Developer, Co-Owner",
       "link": "https://www.roblox.com/games/88817068170433/Guess-the-Country-Flag-or-Die",
       "description": "Solely developed this game from scratch.",
       "id": "7706772290",  
@@ -83,7 +92,7 @@
     },
    {
       "title": "Fly or Die For Brainrots!",
-      "role": "Lead Scripter, Fullstack Developer",
+      "role": "Lead Scripter, Fullstack Developer, Co-Owner",
       "link": "https://www.roblox.com/games/70992677294394/Fly-or-Die-For-Brainrots",
       "description": "Solely developed this game from scratch.",
       "id": "9655762901",  
