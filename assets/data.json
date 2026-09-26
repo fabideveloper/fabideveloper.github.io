@@ -12,14 +12,14 @@
     {
       "studioName": "Misfits Gaming Studios",
       "position": "Game Partnerships",
-      "icon": "assets/images/Misfits-Logo.png",
+      "icon": "assets/images/Misfits-Logo.webp",
       "link": "https://studio.misfitsgaming.gg/"
     },
     {
       "studioName": "StarBite",
       "position": "COO",
       "icon": "assets/images/Starbite-Logo.png",
-      "link":""
+      "link":"https://starbite.co"
     },
     {
       "studioName": "Simple Bricks",
@@ -40,14 +40,14 @@
       "title": "Survive The Slope!",
       "role": "Lead Scripter, Fullstack Developer, Co-Owner",
       "link": "https://www.roblox.com/games/91575878912978/Survive-The-Slope",
-      "description": "Solely developed this game from scratch",
+      "description": "Solely developed this game from scratch.",
       "id": "10171730665",  
       "ccu": "Loading...",    
       "visits": "Loading..."  
     },
   {
-      "title": "[Unearthed 🏜️] Arcane Lineage",
-      "role": " Fullstack Developer",
+      "title": "Arcane Lineage",
+      "role": "Fullstack Developer",
       "link": "https://www.roblox.com/games/10595058975/Arcane-Lineage",
       "description": "Provided bug fixing and backend scripting.",
       "id": "3846592040",  
@@ -55,7 +55,7 @@
       "visits": "Loading..."  
     },
     {
-      "title": "🏁 Guess the Country Flag or Die!",
+      "title": "Guess the Country Flag or Die!",
       "role": "Lead Scripter, Fullstack Developer, Co-Owner",
       "link": "https://www.roblox.com/games/88817068170433/Guess-the-Country-Flag-or-Die",
       "description": "Solely developed this game from scratch.",
@@ -64,7 +64,7 @@
       "visits": "Loading..."  
     },
     {
-      "title": "💥 Bomb to Mine!",
+      "title": "Bomb to Mine!",
       "role": "Lead Scripter, Fullstack Developer",
       "link": "https://www.roblox.com/games/110695939084401/Bomb-to-Mine",
       "description": "Solely developed this game from scratch.",
@@ -74,7 +74,7 @@
     },
    {
       "title": "Nuke your World!",
-      "role": "Solely developed this game from scratch.",
+      "role": "Lead Scripter, Fullstack Developer",
       "link": "https://www.roblox.com/games/106558016162567/Nuke-your-World",
       "description": "Solely developed this game from scratch.",
       "id": "8689433498",  
@@ -82,7 +82,7 @@
       "visits": "Loading..."  
     },
     {
-      "title": "🥚 My Anime Egg Farm",
+      "title": "My Anime Egg Farm",
       "role": "Assistant Scripter",
       "link": "https://www.roblox.com/games/97883985639349/My-Anime-Egg-Farm",
       "description": "Provided bug fixing and backend scripting assistance.",
@@ -118,7 +118,7 @@
       "visits": "Loading..."  
     },
      {
-      "title": "💬 Name a ... or Die",
+      "title": "Name a ... or Die",
       "role": "Scripter, Fullstack Developer",
       "link": "https://www.roblox.com/games/73878267950152/Name-a-or-Die",
       "description": "Solely developed this game from scratch.",

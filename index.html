@@ -2,151 +2,262 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fabi</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="color-scheme" content="dark">
+    <meta name="theme-color" content="#0a0e17">
+    <title>Fabi · Roblox developer</title>
+    <meta name="description" content="Fabi (@suntFabian) is a Roblox developer, backend first: data saving, game logic and anti-cheat. Games with live player counts, and Loren, a framework for Roblox.">
+    <link rel="canonical" href="https://fabideveloper.github.io/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Fabidev">
+    <meta property="og:title" content="Fabi · Roblox developer">
+    <meta property="og:description" content="Backend first: data saving, game logic and anti-cheat. Games with live player counts, and Loren, a framework for Roblox.">
+    <meta property="og:url" content="https://fabideveloper.github.io/">
+    <meta property="og:image" content="https://fabideveloper.github.io/assets/images/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="The only limit is your imagination. FABIDEV.">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" href="assets/images/favicon.png" type="image/png">
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png">
+    <script>document.documentElement.setAttribute('data-js','');setTimeout(()=>{if(!window.fdReady)document.documentElement.removeAttribute('data-js')},3000)</script>
+    <link rel="preload" href="assets/data.json" as="fetch" crossorigin>
+    <link rel="preconnect" href="https://roblox.fabidevgames.workers.dev" crossorigin>
+    <link rel="preload" href="https://fonts.gstatic.com/s/montserrat/v31/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/@catppuccin/prism@latest/dist/mocha.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono&text=%E2%86%90%E2%86%92%E2%86%97&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,700;1,8..60,400&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Space+Mono&text=%E2%86%90%E2%86%92%E2%86%97&display=swap" rel="stylesheet">
+    </noscript>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script type="module" src="assets/js/main.js"></script>
 </head>
-<body>
-    <div class="ambient-glow"></div>
+<body id="top" data-live="pending">
+    <a class="skip" href="#main">Skip to content</a>
 
-    <nav class="navbar" id="navbar">
-        <div class="nav-links">
-            <a href="#about-section">About</a>
-            <a href="#games-section">Games</a>
-            <a href="#open-source-section">Open Source</a>
+    <header class="rail">
+        <a class="rail-mark" href="#top" aria-label="Fabidev, back to top">F</a>
+        <nav class="rail-nav" aria-label="Sections">
+            <ul role="list">
+                <li><a class="rail-link fd-invert" href="#work" data-spy="work"><span class="rail-text"><span class="fd-dim" aria-hidden="true">01</span> Work</span></a></li>
+                <li><a class="rail-link fd-invert" href="#profile" data-spy="profile"><span class="rail-text"><span class="fd-dim" aria-hidden="true">02</span> Profile</span></a></li>
+                <li><a class="rail-link fd-invert" href="#open-source" data-spy="open-source"><span class="rail-text"><span class="fd-dim" aria-hidden="true">03</span> Open source</span></a></li>
+                <li><a class="rail-link fd-invert" href="#contact" data-spy="contact"><span class="rail-text"><span class="fd-dim" aria-hidden="true">04</span> Contact</span></a></li>
+            </ul>
+        </nav>
+        <button class="readout readout--rail" type="button" aria-pressed="false">
+            <span class="readout-dot"></span>
+            <span class="readout-num digits" data-readout="compact" aria-hidden="true">···</span><span class="sr-only"></span>
+            <span class="readout-state">Live</span><span class="sr-only">, pause live updates</span>
+        </button>
+        <a class="rail-hire fd-press" href="#contact">Hire</a>
+    </header>
+
+    <header class="bar">
+        <a class="bar-mark" href="#top" aria-label="Fabidev, back to top">F</a>
+        <button class="readout readout--bar" type="button" aria-pressed="false">
+            <span class="readout-dot"></span>
+            <span class="readout-num digits" data-readout="compact" aria-hidden="true">···</span><span class="sr-only"></span>
+            <span class="readout-state">Live</span><span class="sr-only">, pause live updates</span>
+        </button>
+        <button class="bar-menu" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+        <nav class="menu" id="menu" aria-label="Sections" hidden inert>
+            <ul role="list">
+                <li><a class="menu-link fd-invert" href="#work" data-spy="work">Work <span class="fd-label fd-dim" aria-hidden="true">01</span></a></li>
+                <li><a class="menu-link fd-invert" href="#profile" data-spy="profile">Profile <span class="fd-label fd-dim" aria-hidden="true">02</span></a></li>
+                <li><a class="menu-link fd-invert" href="#open-source" data-spy="open-source">Open source <span class="fd-label fd-dim" aria-hidden="true">03</span></a></li>
+                <li><a class="menu-link menu-link--contact" href="#contact" data-spy="contact">Contact <span class="fd-label" aria-hidden="true">04</span></a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="main">
+        <section class="hero band tone-ink" aria-labelledby="hero-title">
+            <div class="fd-wrap">
+                <div class="fd-meta">
+                    <span>Fabi · @suntFabian</span>
+                    <span>Roblox developer</span>
+                    <span>Backend first</span>
+                </div>
+
+                <div class="hero__body">
+                    <h1 class="hero__title fd-hero" id="hero-title">
+                        <span class="fd-mask"><span class="fd-mask__in">The only limit</span></span>
+                        <span class="fd-mask"><span class="fd-mask__in">is your imagination.</span></span>
+                    </h1>
+
+                    <p class="hero__live fd-live" aria-hidden="true">
+                        <span class="fd-mask"><span class="fd-mask__in">Right now, <span class="hero__count fd-marker is-pending"><span class="digits" data-readout="full" aria-hidden="true">···</span><span class="sr-only" data-readout-text></span></span> <span data-people>people are</span> playing games I've worked on.</span></span>
+                    </p>
+
+                    <div class="hero__foot">
+                        <p class="hero__deck fd-body fd-deck">Anything, anytime, anywhere. I can make it effortlessly, fast and perfect.</p>
+                        <div class="hero__side">
+                            <p class="hero__stat"><span class="hero__visits"><span class="digits" data-visits aria-hidden="true">···</span><span class="sr-only" data-visits-text></span></span> visits across <span data-game-count>10</span> games</p>
+                            <p class="hero__stamp">Live from Roblox · updated <time data-stamp></time></p>
+                            <div class="hero__actions">
+                                <a class="fd-btn fd-press" href="#contact">Hire me <span class="fd-arrow" aria-hidden="true">→</span></a>
+                                <a class="fd-link fd-invert" href="#work"><span class="fd-link__label">See the games</span> <span class="fd-arrow fd-arrow--down" aria-hidden="true">↓</span></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="work band tone-raised" id="work" aria-labelledby="work-title">
+            <div class="fd-wrap">
+                <header class="fd-sechead" data-reveal>
+                    <div class="fd-meta work-meta">
+                        <span>Work</span>
+                        <span><span data-game-count>10</span> games</span>
+                        <span data-sorted>Sorted by players now</span>
+                        <div class="fd-meta__end reel-controls">
+                            <button class="fd-ghost" type="button" data-reel="prev" aria-label="Previous game"><span aria-hidden="true">←</span></button>
+                            <span class="reel-count" aria-live="off"><span aria-hidden="true"><span data-reel-index>01</span> / <span data-reel-total>10</span></span><span class="sr-only" data-reel-status>Game 1 of 10</span></span>
+                            <button class="fd-ghost" type="button" data-reel="next" aria-label="Next game"><span aria-hidden="true">→</span></button>
+                            <button class="fd-ghost reel-pause" type="button" data-reel="pause" aria-label="Pause game reel">Pause</button>
+                        </div>
+                    </div>
+                    <h2 class="fd-display-2" id="work-title"><span class="fd-mask"><span class="fd-mask__in">Games I've built or helped build.</span></span></h2>
+                    <span class="fd-rule" aria-hidden="true"></span>
+                </header>
+                <section class="reel" aria-roledescription="carousel" aria-label="Games">
+                    <div class="reel-wrap" data-reveal>
+                        <ol class="reel-track" role="list"></ol>
+                    </div>
+                    <div class="reel-slot"></div>
+                </section>
+            </div>
+        </section>
+
+        <section class="profile band tone-ink" id="profile" aria-labelledby="profile-title">
+            <div class="fd-wrap">
+                <header class="fd-sechead" data-reveal>
+                    <div class="fd-meta">
+                        <span>Profile</span>
+                        <span>Data saving · game logic · anti-cheat</span>
+                        <span>@suntFabian</span>
+                    </div>
+                    <h2 class="fd-display-2" id="profile-title"><span class="fd-mask"><span class="fd-mask__in">Backend first. The rest too.</span></span></h2>
+                    <span class="fd-rule" aria-hidden="true"></span>
+                </header>
+                <ul class="counters" role="list">
+                    <li class="counter">
+                        <span class="sr-only">500+ projects shipped</span>
+                        <span class="counter-num" aria-hidden="true"><span class="counter-digits">500</span><span class="counter-plus">+</span></span>
+                        <span class="counter-label" aria-hidden="true">Projects shipped</span>
+                    </li>
+                    <li class="counter">
+                        <span class="sr-only">8+ years</span>
+                        <span class="counter-num" aria-hidden="true"><span class="counter-digits">8</span><span class="counter-plus">+</span></span>
+                        <span class="counter-label" aria-hidden="true">Years</span>
+                    </li>
+                    <li class="counter">
+                        <span class="sr-only">250+ clients</span>
+                        <span class="counter-num" aria-hidden="true"><span class="counter-digits">250</span><span class="counter-plus">+</span></span>
+                        <span class="counter-label" aria-hidden="true">Clients</span>
+                    </li>
+                </ul>
+                <div class="profile__body">
+                    <p class="sticker fd-head" data-reveal>Ever wanted to see a flying pig with a machine gun, while also speaking fluent French? I can do that.</p>
+                    <div class="profile__about">
+                        <p class="fd-body">I just like making cool stuff on Roblox. I mainly do backend scripting (data saving, game logic, anti-cheat), but I can handle pretty much anything you throw at me.</p>
+                        <a class="fd-link fd-invert" href="https://www.roblox.com/users/366712739/profile" target="_blank" rel="noopener"><span class="fd-link__label">@suntFabian on Roblox</span> <span class="fd-arrow" aria-hidden="true">↗</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="oss band tone-raised" id="open-source" aria-labelledby="oss-title">
+            <div class="fd-wrap">
+                <header class="fd-sechead" data-reveal>
+                    <div class="fd-meta">
+                        <span>Open source</span>
+                        <span><span class="fd-marker" data-loren-version>2.0.0-beta.1</span></span>
+                        <span>Luau</span>
+                        <span>MIT</span>
+                        <span data-stars hidden><span aria-hidden="true">★</span> <span data-stars-count></span><span class="sr-only"> stars on GitHub</span></span>
+                    </div>
+                    <h2 class="fd-display-2" id="oss-title"><span class="fd-mask"><span class="fd-mask__in">Loren, a framework for Roblox.</span></span></h2>
+                    <span class="fd-rule" aria-hidden="true"></span>
+                </header>
+                <div class="loren">
+                    <img class="loren__heart" src="assets/images/loren-heart.png" alt="" width="56" height="56">
+                    <div class="loren__text">
+                        <h3 class="loren__name fd-head">Loren</h3>
+                        <p class="loren__copy">A framework for Roblox games in Luau. No RemoteEvents, no require paths.</p>
+                    </div>
+                    <div class="copybox loren__install">
+                        <code class="copybox__text"><span class="copybox__prompt" aria-hidden="true">$ </span><span data-install>npm i -g loren-framework@next</span></code>
+                        <button class="copybox__button" type="button" aria-label="Copy install command" data-copy="[data-install]">Copy</button>
+                    </div>
+                    <div class="loren__links">
+                        <a class="fd-btn fd-press" href="https://fabideveloper.github.io/Loren-Framework/" target="_blank" rel="noopener">Docs <span class="fd-arrow" aria-hidden="true">→</span></a>
+                        <a class="fd-link fd-invert" href="https://github.com/fabideveloper/Loren-Framework" target="_blank" rel="noopener"><span class="fd-link__label">GitHub</span> <span class="fd-arrow" aria-hidden="true">↗</span></a>
+                        <a class="fd-link fd-invert" href="https://www.npmjs.com/package/loren-framework" target="_blank" rel="noopener"><span class="fd-link__label">npm</span> <span class="fd-arrow" aria-hidden="true">↗</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="credits band tone-ink" aria-labelledby="credits-title" hidden>
+            <div class="fd-wrap">
+                <header class="fd-sechead" data-reveal>
+                    <div class="fd-meta">
+                        <h2 id="credits-title">Associated with</h2>
+                        <span><span data-studio-count>5</span> studios</span>
+                    </div>
+                    <span class="fd-rule" aria-hidden="true"></span>
+                </header>
+                <ol class="credits-roll" role="list"></ol>
+            </div>
+        </section>
+
+        <section class="contact band tone-blue" id="contact" aria-labelledby="contact-title">
+            <div class="fd-wrap">
+                <header class="fd-sechead" data-reveal>
+                    <div class="fd-meta">
+                        <span>Contact</span>
+                        <span>Email · Discord</span>
+                    </div>
+                    <span class="fd-rule" aria-hidden="true"></span>
+                </header>
+                <div class="contact__grid" data-reveal>
+                    <h2 class="contact__title fd-display-1" id="contact-title"><span class="fd-mask"><span class="fd-mask__in">Got a game in mind?</span></span></h2>
+                    <div class="contact__side">
+                        <div class="copybox copybox--ink">
+                            <span class="copybox__text" data-email>fabidevgames@gmail.com</span>
+                            <button class="copybox__button" type="button" aria-label="Copy email address" data-copy="[data-email]">Copy</button>
+                        </div>
+                        <div class="contact__actions">
+                            <a class="fd-btn fd-btn--ink fd-press" href="mailto:fabidevgames@gmail.com">Email me <span class="fd-arrow" aria-hidden="true">→</span></a>
+                            <a class="fd-btn fd-btn--line" href="https://discord.com/users/479583570139021332" target="_blank" rel="noopener">Discord <span class="fd-arrow" aria-hidden="true">↗</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="foot tone-deep">
+        <div class="fd-wrap">
+            <div class="foot__row">
+                <p class="fd-label fd-dim">© <span id="year">2026</span> Fabidev</p>
+                <ul class="foot__links" role="list">
+                    <li><a class="fd-link fd-invert" href="https://www.roblox.com/users/366712739/profile" target="_blank" rel="noopener"><span class="fd-link__label">Roblox</span> <span class="fd-arrow" aria-hidden="true">↗</span></a></li>
+                    <li><a class="fd-link fd-invert" href="https://discord.com/users/479583570139021332" target="_blank" rel="noopener"><span class="fd-link__label">Discord</span> <span class="fd-arrow" aria-hidden="true">↗</span></a></li>
+                    <li><a class="fd-link fd-invert" href="https://fabideveloper.github.io/Loren-Framework/" target="_blank" rel="noopener"><span class="fd-link__label">Loren</span> <span class="fd-arrow" aria-hidden="true">↗</span></a></li>
+                    <li><a class="fd-link fd-invert" href="#top"><span class="fd-link__label">Top</span> <span class="fd-arrow fd-arrow--up" aria-hidden="true">↑</span></a></li>
+                </ul>
+            </div>
+            <svg class="sign" data-reveal viewBox="0 0 1000 131" aria-hidden="true" focusable="false"><text x="0" y="148" font-size="204" textLength="990" lengthAdjust="spacing">FABIDEV</text></svg>
         </div>
-        <a href="#contact" class="btn-nav">Hire Me</a>
-    </nav>
+    </footer>
 
-    <div class="main-wrapper">
-        <header class="hero-section reveal">
-            <div class="status-badge">Limited Availability</div>
-            <h1>The only limit<br>is your imagination.</h1>
-            <p class="hero-subtext">Anything, anytime, anywhere. I can make it effortlessly, fast and perfect.</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn-primary">Get started</a>
-                <a href="#games-section" class="btn-secondary">View portfolio</a>
-            </div>
-        </header>
-
-        <section class="stats-section reveal">
-            <div class="stats-container">
-                <div class="stat-box">
-                    <span align="center" class="stat-number skeleton-text" id="total-ccu">000000</span>
-                    <span align="center" class="stat-label">Active Players</span>
-                </div>
-                <div class="stat-box">
-                    <span align="center" class="stat-number skeleton-text" id="total-visits">00000000</span>
-                    <span align="center" class="stat-label">Total Sessions</span>
-                </div>
-                <div class="stat-box">
-                    <span align="center" class="stat-number stat-counter" data-target="250+">0</span>
-                    <span align="center" class="stat-label">Happy Clients</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="about-section" class="reveal">
-            <div class="about-grid">
-                <div class="about-text">
-                    <h2>From passion to Performance.</h2>
-                    <p>I just like making cool stuff on Roblox. I mainly do backend scripting (data saving, game logic, anti-cheat), but I can handle pretty much anything you throw at me.</p>
-                    <p><strong>Ever wanted to see a flying pig with a machine gun, while also speaking fluent French? I can do that.</strong></p>
-                    <a href="https://www.roblox.com/users/366712739/profile" target="_blank" class="roblox-handle">
-                        Roblox: <span>@suntFabian</span>
-                    </a>
-                </div>
-                <div class="about-stats" id="stats">
-                    <div class="stat-item-large">
-                        <span class="stat-counter-large stat-counter" data-target="500+">0</span>
-                        <span class="stat-label">Projects Completed</span>
-                    </div>
-                    <div class="stat-item-large">
-                        <span class="stat-counter-large stat-counter" data-target="8+">0</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                </div>
-            </div>
-            <div id="job-container" class="job-list reveal"></div>
-        </section>
-
-        <section id="games-section" class="reveal">
-            <div class="section-header">
-                <h2>Featured Experiences</h2>
-                <p>Turning creative concepts into immersive worlds.</p>
-            </div>
-            
-            <div class="carousel-container">
-                <button class="carousel-arrow carousel-arrow-left" id="btn-left">
-                    <svg viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
-                </button>
-                <div id="games-grid" class="carousel-viewport">
-                    <div class="carousel-track" id="carousel-track"></div>
-                </div>
-                <button class="carousel-arrow carousel-arrow-right" id="btn-right">
-                    <svg viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
-                </button>
-            </div>
-        </section>
-
-        <section id="open-source-section" class="reveal">
-            <div class="section-header">
-                <h2>Open Source</h2>
-                <p>Small personal projects</p>
-            </div>
-            
-            <a href="https://fabideveloper.github.io/Loren-Framework/" target="_blank" class="github-card">
-                <div class="github-header">
-                    <svg class="github-icon" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    <span class="github-title">Loren-Framework</span>
-                </div>
-                <p class="github-desc">A CLI-driven, lightweight Roblox framework designed to eliminate pathing headaches, automate VS Code environments, and provide a clean, predictable lifecycle for your game logic.</p>
-                <div class="github-stats">
-                    <span class="github-stat">
-                        <span class="lang-dot"></span> Lua
-                    </span>
-                    <span class="github-stat">
-                        <svg viewBox="0 0 16 16"><path d="M8 .25a.75.75 0 01.673.418l1.882 3.815 4.174.606a.75.75 0 01.416 1.279l-3.02 2.943.713 4.157a.75.75 0 01-1.088.791L8 12.347l-3.733 1.963a.75.75 0 01-1.088-.79l.713-4.157-3.02-2.943a.75.75 0 01.416-1.28l4.173-.606L7.327.668A.75.75 0 018 .25z"/></svg>
-                        Stars
-                    </span>
-                    <span class="github-stat">
-                        <svg viewBox="0 0 16 16"><path d="M5 5.372v.878c0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75v-.878a2.25 2.25 0 111.5 0v.878a2.25 2.25 0 01-2.25 2.25h-1.5v2.128a2.251 2.251 0 11-1.5 0V8.5h-1.5A2.25 2.25 0 013.5 6.25v-.878a2.25 2.25 0 111.5 0ZM5 3.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0Zm6.75.75a.75.75 0 100-1.5.75.75 0 000 1.5ZM7.25 12.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0Z"/></svg>
-                        Forks
-                    </span>
-                    <span class="github-stat">
-                        <svg viewBox="0 0 16 16"><path d="M14.7 1.3c-.4-.4-1-.4-1.4 0l-1.5 1.5c-.3-.1-.6-.2-.9-.2-1.3 0-2.4 1-2.6 2.2L1.8 11.3c-.6.6-.6 1.5 0 2.1l.8.8c.6.6 1.5.6 2.1 0l6.5-6.5c1.2-.2 2.2-1.3 2.2-2.6 0-.3-.1-.6-.2-.9l1.5-1.5c.4-.4.4-1 0-1.4l-1.4-1.4zM3.5 13.5l-.7-.7 1.1-1.1.7.7-1.1 1.1zm7.1-7.1l-6.5 6.5-.7-.7 6.5-6.5c.5.5.7 1.2.7 1.8 0 .6-.2 1.3-.7 1.8z"/></svg>
-                        Active Early Development
-                    </span>
-                </div>
-            </a>
-        </section>
-
-        <footer class="site-footer reveal" id="contact">
-            <div class="footer-cta">
-                <h2>Ready to build?</h2>
-                <p>Let's create the next big thing together.</p>
-                <div class="footer-buttons">
-                    <a href="mailto:fabidevgames@gmail.com" class="btn-primary">Email Me</a>
-                    <a href="https://discord.com/users/479583570139021332" target="_blank" class="btn-secondary discord-btn">
-                        <svg viewBox="0 0 24 24" class="icon-discord"><path d="M20.317 4.3698a19.7913 19.7913 0 00-4.8851-1.5152.0741.0741 0 00-.0785.0371c-.211.3753-.4447.8648-.6083 1.2495-1.8447-.2762-3.68-.2762-5.4868 0-.1636-.3933-.4058-.8742-.6177-1.2495a.077.077 0 00-.0785-.037 19.7363 19.7363 0 00-4.8852 1.515.0699.0699 0 00-.0321.0277C.5334 9.0458-.319 13.5799.0992 18.0578a.0824.0824 0 00.0312.0561c2.0528 1.5076 4.0413 2.4228 5.9929 3.0294a.0777.0777 0 00.0842-.0276c.4616-.6304.8731-1.2952 1.226-1.9942a.076.076 0 00-.0416-.1057c-.6528-.2476-1.2743-.5495-1.8722-.8923a.077.077 0 01-.0076-.1277c.1258-.0943.2517-.1923.3718-.2914a.0743.0743 0 01.0776-.0105c3.9278 1.7933 8.18 1.7933 12.0614 0a.0739.0739 0 01.0785.0095c.1202.099.246.1981.3728.2924a.077.077 0 01-.0066.1276 12.2986 12.2986 0 01-1.873.8914.0766.0766 0 00-.0407.1067c.3604.698.7719 1.3628 1.225 1.9932a.076.076 0 00.0842.0286c1.961-.6067 3.9495-1.5219 6.0023-3.0294a.077.077 0 00.0313-.0552c.5004-5.177-.8382-9.6739-3.5485-13.6604a.061.061 0 00-.0312-.0286zM8.02 15.3312c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9555-2.4189 2.157-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.9555 2.4189-2.1569 2.4189zm7.9748 0c-1.1825 0-2.1569-1.0857-2.1569-2.419 0-1.3332.9554-2.4189 2.1569-2.4189 1.2108 0 2.1757 1.0952 2.1568 2.419 0 1.3332-.946 2.4189-2.1568 2.4189Z"/></svg>
-                        Discord
-                    </a>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <div class="footer-brand">FabiDev</div>
-                <div class="footer-legal">&copy; <span id="year"></span> All rights reserved.</div>
-            </div>
-        </footer>
-    </div>
-
-    <script>document.getElementById('year').innerText = new Date().getFullYear();</script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-lua.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <span class="sr-only" role="status" aria-live="polite" data-status></span>
 </body>
 </html>
